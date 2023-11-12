@@ -20,6 +20,8 @@ const Register=()=>{
             email:data.email,
             password:data.password
         }
+
+        console.log()
     }
     return (
         <div className="main-box">
