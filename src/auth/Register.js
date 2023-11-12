@@ -73,8 +73,7 @@ const Register=()=>{
                         <input type="submit" name="Submit" value="Sign Up" className="btn btn-success"/>
                     </div>
                 </div>
-               
-
+                
                 <div className="row">
                 <div className="row-md-12 text-center"><h6>Already have an account? Log in  </h6></div>
               

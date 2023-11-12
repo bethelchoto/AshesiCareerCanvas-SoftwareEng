@@ -6,9 +6,14 @@
     z-index: 100;
   }
 
+  .navbar .logo img{
+    width: 0.2px;
+  }
+
 .row{padding-top: 20px;}
 
 .main-box {
     width: 60%;
     margin: 40px; 
   }
+

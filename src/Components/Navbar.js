@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+import Logo from '../Assets/Images/ashesiLogo.jpg'
+
+const HeaderNavbar = () => {
   return (
+    // <nav className="navbar navbar-expand-lg navbar-light bg-red" style={{ backgroundColor: '#9F4848' }}>
+    // <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <div className="logo">
+      {/* <img src='Logo'/> */}
+        <img src={Logo}/>
+    </div>
       <a className="navbar-brand" href="#">Ashesi Career Services</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -28,8 +36,7 @@ const Header = () => {
         </form>
       </div>     
     </nav>
-    
   );
 }
 
-export default Header;
+export default HeaderNavbar;
