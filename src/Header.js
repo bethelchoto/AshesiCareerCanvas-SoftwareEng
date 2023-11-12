@@ -1,7 +1,4 @@
 import { Link } from 'react-router-dom';
-import Copyrights from './Footer';
-import Footer from './Footer';
-
 
 const Header = () => {
   return (
@@ -19,7 +16,7 @@ const Header = () => {
             <Link to="/About" className="nav-link">About</Link>
           </li>
           <li className="nav-item">
-            <Link to="/sampleresumes" className="nav-link">Sample Resumes</Link>
+            <Link to="/reg" className="nav-link">Sample Resumes</Link>
           </li>
         </ul>
 
@@ -29,11 +26,7 @@ const Header = () => {
             <li><a href="/login"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
         </form>
-      </div>
-      <div>
-      <Link to="/footer" className="nav-link">Footer</Link>
-      </div>
-      
+      </div>     
     </nav>
     
   );

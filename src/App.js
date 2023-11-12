@@ -2,9 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import Home from './Home';
-import Login from './Login';
-import Register from './Register';
-import Footer from './Footer';
+import Login from './auth/Login';
+import Register from './auth/Register';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -17,7 +16,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
-          <Route path="/footer" element={<Footer/>} />
+
         </Routes>
       </div>
     </Router>
