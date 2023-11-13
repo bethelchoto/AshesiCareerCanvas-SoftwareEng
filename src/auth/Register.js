@@ -1,4 +1,6 @@
 import { useState } from "react";
+import '../Styles/Register.css';
+import { Link } from "react-router-dom";
 
 const Register=()=>{
     const [data, setData] = useState({
@@ -24,7 +26,7 @@ const Register=()=>{
         console.log()
     }
     return (
-        <div className="main-box">
+        <div className="main-box" >
             <form onSubmit={submitForm}>
 
             <div className="row">
@@ -73,11 +75,10 @@ const Register=()=>{
                         <input type="submit" name="Submit" value="Sign Up" className="btn btn-success"/>
                     </div>
                 </div>
-                
+
                 <div className="row">
-                <div className="row-md-12 text-center"><h6>Already have an account? Log in  </h6></div>
-              
-            </div> 
+                    <div className="col-md-12 text-center"><h6>Already have an account ? <Link to ="/login"> Login </Link></h6></div>
+                </div>
             </form>
         </div>
     )

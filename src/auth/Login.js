@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 const Login=()=>{
     const [data, setData] = useState({
@@ -27,43 +28,36 @@ const Login=()=>{
         <div className="main-box">
             <form onSubmit={submitForm}>
             <div className="row">
-                <div className="col-md-12 text-center"><h1>Register</h1></div>
+                <div className="col-md-12 text-center"><h1>Login</h1></div>
             </div>
+
+            <div className="row">
+                <div className="col-md-12 text-center"><h6>Do not have an account ?<Link to ="/register"> Sign Up</Link></h6></div>
+            </div>
+
                 <div className="row">
-                    <div className="col-md-6"> First Name</div>
-                    <div className="col-md-6">
-                        <input type="text" name="first_name" className="form-control"
-                        onChange={handleChange} value={data.first_name}
+                    <div className="row-md-6"> Email </div>
+                    <div className="row-md-6">
+                        <input type="text" name="email" className="form-control"
+                        // onChange={handleChange} value={data.first_name}
                         />
                         
                     </div>
                 </div>
 
                 <div className="row">
-                    <div className="col-md-6"> Last Name</div>
-                    <div className="col-md-6">
-                        <input type="text" name="last_name" className="form-control"
-                        onChange={handleChange} value={data.last_name}
+                    <div className="row-md-6"> Password</div>
+                    <div className="row-md-6">
+                        <input type="text" name="password" className="form-control"
+                        // onChange={handleChange} value={data.first_name}
                         />
+                        
                     </div>
                 </div>
 
                 <div className="row">
-                    <div className="col-md-6"> Email</div>
-                    <div className="col-md-6">
-                        <input type="email" name="email" className="form-control"
-                        onChange={handleChange} value={data.email}
-                        />
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-md-6"> Password</div>
-                    <div className="col-md-6">
-                        <input type="password" name="password" className="form-control"
-                        onChange={handleChange} value={data.password}/>
-                    </div>
-                </div>
+                <div className="col-md-12 text-center"><h6><Link to ="/"> Forget password </Link></h6></div>
+            </div>
             
                 <div className="row">
                     <div className="col-md-12">

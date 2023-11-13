@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
     width: 100%;
     position: fixed;
     top: 0;
@@ -10,10 +10,14 @@
     width: 0.2px;
   }
 
-.row{padding-top: 20px;}
 
 .main-box {
-    width: 60%;
-    margin: 40px; 
-  }
+  width: 60%;
+  margin: 80px auto 40px;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+} */
 
+/* .row{padding-top: 20px;} */

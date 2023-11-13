@@ -3,17 +3,19 @@
 // import TwitterIcon from "@material-ui/icons/Twitter";
 // import FacebookIcon from "@material-ui/icons/Facebook";
 // import LinkedInIcon from "@material-ui/icons/LinkedIn";
-// import "../styles/Footer.css";
+import "../Styles/Footer.css";
 
-// function Footer() {
-//   return (
-//     <div className="footer">
-//       <div className="socialMedia">
-//         <InstagramIcon /> <TwitterIcon /> <FacebookIcon /> <LinkedInIcon />
-//       </div>
-//       <p> &copy; 2021 pedrotechpizza.com</p>
-//     </div>
-//   );
-// }
+function Footer() {
+    return (
+      <div className="footer">
+        <div className="socialMedia">
+            
+          {/* <InstagramIcon /> <TwitterIcon /> <FacebookIcon /> <LinkedInIcon /> */}
+        </div>
+        <p> &copy; 2021 pedrotechpizza.com</p>
+      </div>
+    );
+  }
+  
+  export default Footer;
 
-// export default Footer;

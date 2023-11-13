@@ -1,19 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './Header';
 import HeaderNavbar from './Components/Navbar'
 import Home from './Pages/Home';
 import Login from './Auth/Login';
 import Register from './Auth/Register';
-
+import Footer from './Components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Footer from './Components/Footer';
+
 
 function App() {
+
+  // const location = useLocation();
+
+  // Conditionally render the NavBar only if the current route is not '/' or '/signup'
+  // const renderNavBar = !['/', '/register'].includes(location.pathname);
+
+
   return (
     <Router>
       <div className="container">
-      
+      {/* {renderNavBar && <HeaderNavbar />} */}
         <HeaderNavbar/>
           <switch>
             <Routes>
@@ -22,7 +26,7 @@ function App() {
               <Route path="/register" element={<Register/>} />
             </Routes>
           </switch>
-        {/* <Footer/> */}
+          {/* <Footer/> */}
       </div>
     </Router>
 

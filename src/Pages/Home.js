@@ -1,10 +1,9 @@
-import Logo from '../Assets/Images/ashesiLogo.jpg'
+import { Link } from "react-router-dom";
 
 const Home=()=>{
     return ( 
 
         <div className='logo'>
-            {/* <img src={Logo}/> */}
         </div>
         
     )
