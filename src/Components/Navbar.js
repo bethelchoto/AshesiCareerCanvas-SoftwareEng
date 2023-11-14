@@ -18,7 +18,7 @@ const HeaderNavbar = () => {
             <Link to="/About" className="nav-link">About</Link>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-link">Sample Resumes</Link>
+            <Link to="/skills" className="nav-link">Sample Resumes</Link>
           </li>
         </ul>
 

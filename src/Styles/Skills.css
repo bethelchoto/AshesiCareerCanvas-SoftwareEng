@@ -1,0 +1,39 @@
+.main-box {
+    /* Add your styles for the main box here */
+    border: 2px solid #ccc; /* Example border with increased width */
+    padding: 20px; /* Example padding */
+}
+
+.row {
+    /* Add your styles for rows here */
+}
+
+.row-md-6 {
+    /* Add your styles for the row with class "row-md-6" here */
+}
+
+.form-control {
+    /* Add your styles for the form control input here */
+    width: 100%; /* Example width */
+    padding: 8px; /* Example padding */
+    box-sizing: border-box; /* Example box-sizing */
+}
+
+.form-row {
+    /* Add your styles for the form row here */
+    margin-top: 10px; /* Example margin top */
+}
+
+.btn {
+    /* Add your styles for the common button styles here */
+    margin-right: 15px; /* Example margin right for increased spacing */
+}
+
+.btn-primary {
+    /* Add your styles for the primary button here */
+    background-color: blue; /* Example background color */
+    color: white; /* Example text color */
+    padding: 10px 15px; /* Example padding */
+    border: none; /* Example border */
+    cursor: pointer; /* Example cursor */
+}
