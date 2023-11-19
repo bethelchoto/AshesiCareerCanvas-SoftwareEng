@@ -15,11 +15,11 @@ function Sidebar() {
   return (
     <div className='sidebar'>
       <li ><AccountCircleIcon/> <Link to ="/register" className='textName'>Personal Information</Link></li>
-      <li ><SchoolIcon/> <Link to ="/register" className='textName'>Education</Link></li>
+      <li ><SchoolIcon/> <Link to ="/education" className='textName'>Education</Link></li>
       <li ><EmojiEventsIcon/> <Link to ="/achievements" className='textName'>Achivements</Link></li>
-      <li ><WorkHistoryIcon/> <Link to ="/register" className='textName'>Experience</Link></li>
-      <li ><HistoryEduIcon/> <Link to ="/register" className='textName'>Co-Curriculum</Link></li>
-      <li ><DeveloperBoardIcon/> <Link to ="/register" className='textName'>Project</Link></li>
+      <li ><WorkHistoryIcon/> <Link to ="/workexperience" className='textName'>Experience</Link></li>
+      <li ><HistoryEduIcon/> <Link to ="/activities" className='textName'>Co-Curriculum</Link></li>
+      <li ><DeveloperBoardIcon/> <Link to ="/projects" className='textName'>Project</Link></li>
       <li ><FluorescentIcon/> <Link to ="/skills" className='textName'>Skills</Link></li>
     </div>
   )

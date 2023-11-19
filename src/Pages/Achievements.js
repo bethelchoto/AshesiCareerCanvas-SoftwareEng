@@ -1,53 +1,48 @@
 import '../Styles/Achievements.css';
 import { Link } from "react-router-dom";
 
+import React from 'react';
+
+
 const Achievements=()=>{
-
 return (
-<div className="container-box">
-  <div className="row">
-    <div className="col-md-12 text-center"><h4>Skills</h4></div>
+  <div className='main-archive'>
+  <div className="form-archive-row">
+      <div className="form-group col-md-6">
+        <label for="inputEmail4">Achievement</label>
+        <input type="text" className="form-control" id="inputEmail4"/>
+      </div>
+
+      <div className="form-group col-md-6">
+        <label for="inputEmail">Organization</label>
+        <input type="text" className="form-control" id="inputEmail4" />
+      </div>
   </div>
 
-  <div className="row">
-    <div className="col-md-6">
-      {/* First input field with text on top */}
-      <div className="input-with-label">
-        <label htmlFor="newSkill">New Skill</label>
-        <input type="text" id="newSkill" name="newSkill" className="form-control" />
+  <div className="form-project-row">
+      <div className="form-group col-md-6">
+        <label for="inputEmail4">Year Attained</label>
+        <input type="text" className="form-control" id="inputEmail4"/>
+      </div>
+
+      <div className="form-project-row">
+          <div className="form-group col-md-6">
+            <div className="moveUp"><h6><Link to ="/save"> Add New Achievement </Link></h6></div>
+          </div> 
+      </div>
+
+  </div>     
+
+    <div className="form-project-row">
+
+
+      <div className="form-col">
+            <button type="submit" className="archive-btn btn-primary">cancel</button>
+            <button type="submit" className="archive-btn btn-primary">save</button>
       </div>
     </div>
-    <div className="col-md-6">
-      {/* Second input field with text on top */}
-      <div className="input-with-label">
-        <label htmlFor="email">Current Skill</label>
-        <input type="text" id="email" name="email" className="form-control" />
-      </div>
     </div>
-  </div>
-
-  <div className="row">
-    <div className="col-md-6 offset-md-3">
-      {/* Third input field below the first one */}
-      <div className="input-with-label">
-        <label htmlFor="additionalSkill">Additional Skill</label>
-        <input type="text" id="additionalSkill" name="additionalSkill" className="form-control" />
-      </div>
-    </div>
-  </div>
-
-  <div className="row">
-    <div className="col-md-12 text-center"><h6><Link to="/register"> add more skills</Link></h6></div>
-  </div>
-
-  <div className="form-row">
-    <button type="submit" className="btn btn-primary">cancel</button>
-    <button type="submit" className="btn btn-primary">save</button>
-  </div>
-</div>
-
-
 
     )
-}
+  }
 export default Achievements;

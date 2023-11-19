@@ -1,4 +1,4 @@
-.main-skills{
+.main-project{
     display: flex;
     flex-direction: column;
     margin-left: 30%;
@@ -10,12 +10,11 @@
     max-width: 800px;
     border-radius: 8px;
 }
-.heading{
-    color: #9F4848;
-    text-align: center;
-    margin-left: 80%;
+.moveDown {
+  margin-top: 150px;
+  margin-left: 200px;
 }
-.skills-btn{
+.project-btn{
   margin-left: 15px;
   margin-top: 15px;
   padding: 10px 100px;
@@ -25,11 +24,10 @@
   cursor: pointer;
 }
 
-/* .form-project-control #inputEmail4{
+.form-project-control #inputEmail4{
     width: '300px';
-} */
-
-/* .form-skills-row #move{
+}
+.form-project-row #move{
   margin-top: 200px;
-} */
+}
 
