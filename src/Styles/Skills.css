@@ -1,27 +1,38 @@
-/* .main-box {
-    border: 2px solid #ccc;
-    padding: 20px; 
-}  */
+.container-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; 
+
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 60%;
+    margin: 80px auto 40px;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+  }
 
 .form-control {
     width: 100%; 
-    padding: 8px; 
+    padding: 2px; 
     box-sizing: border-box; 
-}
-
-.form-row {
-    margin-top: 10px; 
+    
 }
 
 .btn {
    
     margin-right: 15px; 
+    
 }
 
 .btn-primary {
-    background-color: blue; 
+    background-color: #9F4848; 
     color: white; 
-    padding: 10px 15px;
+    padding: 10px 50px;
     border: none; 
     cursor: pointer;
 }
+

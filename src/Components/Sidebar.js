@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Styles/Sidebar.css';
 
 import { Link } from 'react-router-dom';
 
@@ -15,11 +16,11 @@ function Sidebar() {
     <div className='sidebar'>
       <li ><AccountCircleIcon/> <Link to ="/register" className='textName'>Personal Information</Link></li>
       <li ><SchoolIcon/> <Link to ="/register" className='textName'>Education</Link></li>
-      <li ><EmojiEventsIcon/> <Link to ="/register" className='textName'>Achivements</Link></li>
+      <li ><EmojiEventsIcon/> <Link to ="/achievements" className='textName'>Achivements</Link></li>
       <li ><WorkHistoryIcon/> <Link to ="/register" className='textName'>Experience</Link></li>
       <li ><HistoryEduIcon/> <Link to ="/register" className='textName'>Co-Curriculum</Link></li>
       <li ><DeveloperBoardIcon/> <Link to ="/register" className='textName'>Project</Link></li>
-      <li ><FluorescentIcon/> <Link to ="/register" className='textName'>Skills</Link></li>
+      <li ><FluorescentIcon/> <Link to ="/skills" className='textName'>Skills</Link></li>
     </div>
   )
 }
