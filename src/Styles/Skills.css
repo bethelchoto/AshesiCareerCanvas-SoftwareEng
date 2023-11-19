@@ -1,39 +1,27 @@
-.main-box {
-    /* Add your styles for the main box here */
-    border: 2px solid #ccc; /* Example border with increased width */
-    padding: 20px; /* Example padding */
-}
-
-.row {
-    /* Add your styles for rows here */
-}
-
-.row-md-6 {
-    /* Add your styles for the row with class "row-md-6" here */
-}
+/* .main-box {
+    border: 2px solid #ccc;
+    padding: 20px; 
+}  */
 
 .form-control {
-    /* Add your styles for the form control input here */
-    width: 100%; /* Example width */
-    padding: 8px; /* Example padding */
-    box-sizing: border-box; /* Example box-sizing */
+    width: 100%; 
+    padding: 8px; 
+    box-sizing: border-box; 
 }
 
 .form-row {
-    /* Add your styles for the form row here */
-    margin-top: 10px; /* Example margin top */
+    margin-top: 10px; 
 }
 
 .btn {
-    /* Add your styles for the common button styles here */
-    margin-right: 15px; /* Example margin right for increased spacing */
+   
+    margin-right: 15px; 
 }
 
 .btn-primary {
-    /* Add your styles for the primary button here */
-    background-color: blue; /* Example background color */
-    color: white; /* Example text color */
-    padding: 10px 15px; /* Example padding */
-    border: none; /* Example border */
-    cursor: pointer; /* Example cursor */
+    background-color: blue; 
+    color: white; 
+    padding: 10px 15px;
+    border: none; 
+    cursor: pointer;
 }
