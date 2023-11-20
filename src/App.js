@@ -11,8 +11,10 @@ import EducationForm from './Pages/Education';
 import HeaderNavbar from './Components/Navbar';
 import Achievements from './Pages/Achievements';
 import WorkExperience from "./Pages/WorkExperience";
+import StudentProfile from "./Pages/StudentProfile";
 import MybeShowComponents from "./Components/ShowComponents";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -38,7 +40,8 @@ function App() {
               <Route path="/projects" element={<Projects/>} />
               <Route path="/activities" element={<CoCurriculum/>} />
               <Route path="/workexperience" element={<WorkExperience/>} />
-              <Route path="/education" element={<Education/>} />
+              <Route path="/studentprofile" element={<StudentProfile/>} />
+              <Route path="/                                                            " element={<Education/>} />
             </Routes>
           </switch>
 

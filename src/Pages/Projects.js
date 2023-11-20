@@ -56,12 +56,7 @@ return (
                     <button type="submit" className="project-btn btn-primary">cancel</button>
                     <button type="submit" className="project-btn btn-primary">save</button>
               </div>
-
             </div>
-
-
-            
-
         </div>
 
 

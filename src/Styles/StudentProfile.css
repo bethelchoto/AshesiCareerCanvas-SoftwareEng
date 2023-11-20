@@ -1,0 +1,49 @@
+.main-student{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30%;
+    margin-top: 40px;
+    height: 80vh; 
+    width: 90%;
+    border: 1px solid #d69f9f;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 8px;
+}
+/* .moveDown {
+  margin-top: 300px;
+  margin-left: 200px;
+} */
+/* .stnd-btn{
+  margin-left: 15px;
+  margin-bottom: 15px; 
+  padding: 10px 100px;
+  background-color: #489f62; 
+  color: white; 
+  border: none; 
+  cursor: pointer;
+} */
+
+.student-btn {
+  margin-left: 15px;
+  margin-bottom: 100px; /* Adjust this value or set it to 0 */
+  margin-top: 0px; /* Add this line and adjust the value as needed */
+  padding: 10px 100px;
+  background-color: #489f62;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.form-student-control #inputEmail4{
+    width: '300px';
+}
+.form-student-row #move{
+  margin-top: 200px;
+}
+
+.putDown {
+  margin-top: 90px;
+  margin-left: 0px;
+}

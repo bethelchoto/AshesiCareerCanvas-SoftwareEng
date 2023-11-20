@@ -14,7 +14,7 @@ import FluorescentIcon from '@mui/icons-material/Fluorescent';
 function Sidebar() {
   return (
     <div className='sidebar'>
-      <li ><AccountCircleIcon/> <Link to ="/register" className='textName'>Personal Information</Link></li>
+      <li ><AccountCircleIcon/> <Link to ="/studentprofile" className='textName'>Personal Information</Link></li>
       <li ><SchoolIcon/> <Link to ="/education" className='textName'>Education</Link></li>
       <li ><EmojiEventsIcon/> <Link to ="/achievements" className='textName'>Achivements</Link></li>
       <li ><WorkHistoryIcon/> <Link to ="/workexperience" className='textName'>Experience</Link></li>
