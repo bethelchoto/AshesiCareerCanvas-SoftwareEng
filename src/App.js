@@ -14,6 +14,8 @@ import WorkExperience from "./Pages/WorkExperience";
 import StudentProfile from "./Pages/StudentProfile";
 import MybeShowComponents from "./Components/ShowComponents";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainEducation from "./Pages/MainEducation";
+import MainExperience from "./Pages/MainExperience";
 
 
 function App() {
@@ -41,7 +43,11 @@ function App() {
               <Route path="/activities" element={<CoCurriculum/>} />
               <Route path="/workexperience" element={<WorkExperience/>} />
               <Route path="/studentprofile" element={<StudentProfile/>} />
-              <Route path="/                                                            " element={<Education/>} />
+             
+
+              {/* Main Student Pages */}
+              <Route path="/maineducation" element={<MainEducation/>} />
+              <Route path="/mainexperience" element={<MainExperience/>} />
             </Routes>
           </switch>
 

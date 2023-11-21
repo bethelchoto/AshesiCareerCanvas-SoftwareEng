@@ -53,8 +53,8 @@ return (
               </div>
 
               <div className="form-col">
-                    <button type="submit" className="project-btn btn-primary">cancel</button>
-                    <button type="submit" className="project-btn btn-primary">save</button>
+                    <button type="submit" className="cancel">cancel</button>
+                    <button type="submit" className="save">save</button>
               </div>
             </div>
         </div>

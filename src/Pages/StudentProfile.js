@@ -49,21 +49,12 @@ return (
                   </div>
               </div> 
 
-
-
-
             <div className="form-project-row">
               <div className="form-project-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">Address</label>
                     <input type="text" className="form-control" id="description" style={{width: '735px', height: '60px'}}/>
                   </div>
-              </div>
-
-              <div className="form-project-row">
-                  <div className="form-group col-md-6">
-                    <div className="putDown"><h6><Link to ="/save"> Change Password </Link></h6></div>
-                  </div> 
               </div>
 
               <div className="form-col">
