@@ -1,35 +1,35 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import '../Styles/MainExperience.css';
+import '../Styles/MainCurriculum.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
-const MainExperience = () => {
+const MainCurriculum = () => {
   return (
-      <div className='main-experience'>
+      <div className='main-curr'>
             <div className="form-student-row">
                   <div className="form-group col-md-6">
-                    <label for="inputEmail4">EXPERIENCE</label>
+                    <label for="inputEmail4">EXTRA CURRICULUM ACTIVITIES</label>
                   </div>
                   <hr className="long-line"  style={{ width: '100%', border: '1px solid black' }}/>
             </div>
 
-        <div className='row-experience'>
+        <div className='row-curriculum'>
 
-            <div className='left-side-experience'>
+            <div className='left-side-curr'>
                 <CheckBoxIcon/>
             </div>
 
-            <div className='right-side'>
+            <div className='right-side-curr'>
 
                 <div className="labels-container">
-                    <label htmlFor="label1">School :</label>
-                    <span id="label1"> Ashesi University</span>
+                    <label htmlFor="label1">Organization :</label>
+                    <span id="label1"> PEN, Practical Education Network</span>
                 </div>
 
                 <div className="labels-container">
-                    <label htmlFor="label1">Program :</label>
-                    <span id="label1"> Computer Science</span>
+                    <label htmlFor="label1">Country :</label>
+                    <span id="label1"> Ghana</span>
                 </div>
 
                 <div className="labels-container">
@@ -50,11 +50,11 @@ const MainExperience = () => {
             </div>
 
             <div> 
-                <button className='main-exp-btn'>Approved</button>
+                <button className='main-curr-btn'>Approved</button>
             </div>
         </div>
 
-        <div className='btn-row-exp'> 
+        <div className='btn-row-curr'> 
             <button className='main-exp-btn'>Cancel</button>
             <button className='main-exp-btn'>Edit</button>
             <button className='main-exp-btn'>Delete</button>
@@ -66,4 +66,4 @@ const MainExperience = () => {
   );
 };
 
-export default MainExperience;
+export default MainCurriculum;

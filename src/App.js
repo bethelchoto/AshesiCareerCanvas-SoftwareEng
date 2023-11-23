@@ -16,6 +16,10 @@ import MybeShowComponents from "./Components/ShowComponents";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainEducation from "./Pages/MainEducation";
 import MainExperience from "./Pages/MainExperience";
+import MainProject from "./Pages/MainProject";
+import MainCurriculum from "./Pages/MainCurriculum";
+import MainSkill from "./Pages/MainSkill";
+import MainAchievement from "./Pages/MainAchievement";
 
 
 function App() {
@@ -48,6 +52,11 @@ function App() {
               {/* Main Student Pages */}
               <Route path="/maineducation" element={<MainEducation/>} />
               <Route path="/mainexperience" element={<MainExperience/>} />
+              <Route path="/mainproject" element={<MainProject/>} />
+              <Route path="/maincurriculum" element={<MainCurriculum/>} />
+              <Route path="/mainskill" element={<MainSkill/>} />
+              <Route path="/mainachievement" element={<MainAchievement/>} />
+
             </Routes>
           </switch>
 

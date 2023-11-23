@@ -1,4 +1,4 @@
-.main-experience{
+.main-achievement{
     display: flex;
     flex-direction: column;
     margin-left: 20%;
@@ -11,15 +11,13 @@
     max-height: 900px;
     border-radius: 8px;
 }
-
-.row-experience {
+.row-achievement {
     display: grid;
-    grid-template-columns: 0.1fr auto 10fr; 
+    grid-template-columns: 0.1fr 100fr 10fr; 
     margin-top: 10px;
 }
-
 /* Button styles */
-.main-exp-btn {
+.main-achievement-btn {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -36,13 +34,13 @@
     margin-right: 10px; 
     min-width: 120px;
 }
-
-.main-exp-btn:hover {
+.main-achievement-btn:hover {
     background-color: #c97b3c; 
 }
-
-.btn-row-exp{
+.btn-row-achievement{
     display: flex;
-    justify-content: space-between;
-    margin-top: 200px;
+    justify-content: space-between; 
+}
+#achievement{
+    margin-top: 350px;
 }

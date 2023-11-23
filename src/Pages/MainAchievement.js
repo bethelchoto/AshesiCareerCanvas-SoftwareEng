@@ -1,0 +1,53 @@
+import React from 'react';
+import { Link } from "react-router-dom";
+import '../Styles/MainAchievement.css';
+
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+
+const MainAchievement = () => {
+  return (
+      <div className='main-achievement'>
+            <div className="form-student-row">
+                  <div className="form-group col-md-6">
+                    <label for="inputEmail4">EXPERIENCE</label>
+                  </div>
+                  <hr className="long-line"  style={{ width: '100%', border: '1px solid black' }}/>
+            </div>
+
+        <div className='row-achievement'>
+
+            <div className='left-side-achievement'>
+                <CheckBoxIcon/>
+            </div>
+
+            <div className='right-side-achievement'>
+
+                <div className="labels-container">
+                    <label htmlFor="label1">Achivement :</label>
+                    <span id="label1"> 2nd Place</span>
+                </div>
+
+                <div className="labels-container">
+                    <label htmlFor="label1">Organization :</label>
+                    <span id="label1"> Ashesi D:lab </span>
+                </div>
+
+            </div>
+
+            <div> 
+                <button className='main-achievement-btn'>Approved</button>
+            </div>
+        </div>
+
+        <div className='btn-row-achievement' id='achievement'> 
+            <button className='main-exp-btn'>Cancel</button>
+            <button className='main-exp-btn'>Edit</button>
+            <button className='main-exp-btn'>Delete</button>
+            <button className='main-exp-btn'>Add</button>
+        </div> 
+
+    </div>
+  );
+};
+
+export default MainAchievement;
