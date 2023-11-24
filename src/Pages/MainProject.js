@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../Styles/MainProject.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 const MainProject = () => {
+    const navigate = useNavigate()
   return (
       <div className='main-project'>
             <div className="form-student-row">
@@ -58,7 +59,7 @@ const MainProject = () => {
             <button className='main-exp-btn'>Cancel</button>
             <button className='main-exp-btn'>Edit</button>
             <button className='main-exp-btn'>Delete</button>
-            <button className='main-exp-btn'>Add</button>
+            <button className='main-exp-btn' onClick={()=> {navigate("/projects")}}>Add</button>
         </div> 
 
     </div>

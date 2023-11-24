@@ -21,7 +21,6 @@ function Sidebar() {
       <li ><HistoryEduIcon/> <Link to ="/maincurriculum" className='textName'>Co-Curriculum</Link></li>
       <li ><DeveloperBoardIcon/> <Link to ="/mainproject" className='textName'>Project</Link></li>
       <li ><FluorescentIcon/> <Link to ="/mainskill" className='textName'>Skills</Link></li>
-      <li ><FluorescentIcon/> <Link to ="/review" className='textName'>Review</Link></li>
     </div>
   )
 }

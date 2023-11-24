@@ -1,0 +1,74 @@
+.main-admin{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-top: 20px;
+    height: 85%; 
+    width: 78%;
+    border: 1px solid #d69f9f;
+    padding: 20px;
+    max-width: 1100px;
+    max-height: 900px;
+    border-radius: 8px;
+}
+
+.row-admin {
+    display: grid;
+    grid-template-columns: 20fr 10fr 1fr; 
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+/* Button styles */
+.main-exp-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #a06e45; 
+    color: #000000; 
+    background-color: #a06e45; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+    padding: 10px 20px; 
+    margin-right: 10px; 
+    min-width: 120px;
+}
+
+
+
+.main-exp-btn:hover {
+    background-color: #c97b3c; 
+}
+
+#second{
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.btn-row-admin{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.comments{
+    width: 300px;
+    height: 250px;
+}
+
+/* Apply different colors to the grid columns */
+.row-admin > :nth-child(1) {
+    background-color: #e57373; /* Color for the first column */
+}
+
+.row-admin > :nth-child(2) {
+    background-color: #81c784; /* Color for the second column */
+}
+
+.row-admin > :nth-child(3) {
+    background-color: #64b5f6; /* Color for the third column */
+}

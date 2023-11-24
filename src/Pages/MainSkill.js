@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../Styles/MainSkill.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 const MainSkill = () => {
+    const navigate = useNavigate()
   return (
       <div className='main-skill'>
             <div className="form-student-row">
@@ -45,10 +46,10 @@ const MainSkill = () => {
         </div>
 
         <div className='btn-row-skill' id='skills'> 
-            <button className='main-exp-btn'>Cancel</button>
-            <button className='main-exp-btn'>Edit</button>
-            <button className='main-exp-btn'>Delete</button>
-            <button className='main-exp-btn'>Add</button>
+            <button className='main-exp-btn' onClick={()=> {navigate("/")}}>Cancel</button>
+            <button className='main-exp-btn' onClick={()=> {navigate("/")}}>Edit</button>
+            <button className='main-exp-btn'onClick={()=> {navigate("/")}}>Delete</button>
+            <button className='main-exp-btn'onClick={()=> {navigate("/skills")}}>Add</button>
         </div> 
 
     </div>

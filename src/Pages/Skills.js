@@ -1,13 +1,16 @@
 import '../Styles/Skills.css';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from 'react';
 
 const Skills=()=>{
+  const navigate = useNavigate()
+
 
 return (
         <div className='main-skills'>
 
-<div className="form-skills-row">
+          <div className="form-skills-row">
 
             <div className="form-group col-md-6">
                     <div className="heading"><h1>SKILLS</h1></div>
@@ -28,7 +31,7 @@ return (
               </div>
 
               <div className="form-col">
-                    <button type="submit" className="skills-btn btn-primary">cancel</button>
+                    <button type="submit" className="skills-btn btn-primary" onClick={()=> {navigate('/')}}>cancel</button>
                     <button type="submit" className="skills-btn btn-primary">save</button>
               </div>
             </div>

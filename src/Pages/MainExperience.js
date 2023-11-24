@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../Styles/MainExperience.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 const MainExperience = () => {
+    const navigate = useNavigate()
   return (
       <div className='main-experience'>
             <div className="form-student-row">
@@ -55,10 +56,10 @@ const MainExperience = () => {
         </div>
 
         <div className='btn-row-exp'> 
-            <button className='main-exp-btn'>Cancel</button>
+            <button className='main-exp-btn' onClick={()=>{navigate("/")}}>Cancel</button>
             <button className='main-exp-btn'>Edit</button>
             <button className='main-exp-btn'>Delete</button>
-            <button className='main-exp-btn'>Add</button>
+            <button className='main-exp-btn' onClick={()=>{navigate("/workexperience")}}>Add</button>
             
         </div> 
 

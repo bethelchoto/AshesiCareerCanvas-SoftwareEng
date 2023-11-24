@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../Styles/MainAchievement.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 const MainAchievement = () => {
+    const navigate = useNavigate()
+
   return (
       <div className='main-achievement'>
             <div className="form-student-row">
@@ -40,10 +42,10 @@ const MainAchievement = () => {
         </div>
 
         <div className='btn-row-achievement' id='achievement'> 
-            <button className='main-exp-btn'>Cancel</button>
-            <button className='main-exp-btn'>Edit</button>
-            <button className='main-exp-btn'>Delete</button>
-            <button className='main-exp-btn'>Add</button>
+            <button className='main-exp-btn' onClick={()=> {navigate("/")}}>Cancel</button>
+            <button className='main-exp-btn' onClick={()=> {navigate("/achievements")}}>Edit</button>
+            <button className='main-exp-btn' onClick={()=> {navigate("/")}}>Delete</button>
+            <button className='main-exp-btn' onClick={()=> {navigate("/achievements")}}>Add</button>
         </div> 
 
     </div>
