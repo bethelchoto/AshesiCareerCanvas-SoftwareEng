@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import '../Styles/App.css';
 import '../Styles/MainProject.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -7,7 +8,7 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 const MainProject = () => {
     const navigate = useNavigate()
   return (
-      <div className='main-project'>
+      <div className='boarder-container'>
             <div className="form-student-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">PROJECT</label>
@@ -15,13 +16,13 @@ const MainProject = () => {
                   <hr className="long-line"  style={{ width: '100%', border: '1px solid black' }}/>
             </div>
 
-        <div className='row-project'>
+        <div className='row-grid'>
 
             <div className='left-side-project'>
                 <CheckBoxIcon/>
             </div>
 
-            <div className='right-side-project'>
+            <div className='right-side'>
 
             <div className="labels-container-project">
                     <label htmlFor="label1">Project Name : </label>
@@ -51,15 +52,15 @@ const MainProject = () => {
             </div>
 
             <div> 
-                <button className='main-exp-btn'>Approved</button>
+                <button className='main-primary-btn'>Approved</button>
             </div>
         </div>
 
         <div className='btn-row-project'> 
-            <button className='main-exp-btn'>Cancel</button>
-            <button className='main-exp-btn'>Edit</button>
-            <button className='main-exp-btn'>Delete</button>
-            <button className='main-exp-btn' onClick={()=> {navigate("/projects")}}>Add</button>
+            <button className='main-primary-btn'>Cancel</button>
+            <button className='main-primary-btn'>Edit</button>
+            <button className='main-primary-btn'>Delete</button>
+            <button className='main-primary-btn' onClick={()=> {navigate("/projects")}}>Add</button>
         </div> 
 
     </div>

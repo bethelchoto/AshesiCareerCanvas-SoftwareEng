@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import '../Styles/App.css';
 import '../Styles/Education.css';
 
 const Education = () => {
   return (
-      <div className='main-education'>
+      <div className='boarder-container'>
             <div className="form-archive-row">
                 <div className="form-group col-md-6">
                   <label for="inputEmail4">Achievement</label>
@@ -35,13 +36,13 @@ const Education = () => {
                   </div> 
               </div>
 
-            <div className="form-project-row">
-              <div className="form-col">
-                    <button type="submit" className="archive-btn btn-primary">cancel</button>
-                    <button type="submit" className="archive-btn btn-primary">save</button>
+           
+              <div className="btn-row-education-form">
+                    <button type="submit" className="main-primary-btn">cancel</button>
+                    <button type="submit" className="main-primary-btn">save</button>
               </div>
 
-            </div>
+           
       </div>
   );
 };

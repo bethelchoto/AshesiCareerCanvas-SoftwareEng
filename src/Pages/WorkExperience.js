@@ -1,11 +1,12 @@
-import '../Styles/Projects.css';
+import '../Styles/App.css';
+import '../Styles/WorkExperience.css';
 import { Link } from "react-router-dom";
 
 import React from 'react';
 
 const WorkExperience=()=>{
 return (
-        <div className='main-project'>
+        <div className='boarder-container'>
               <div className="form-project-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">Job Tittle</label>
@@ -34,7 +35,7 @@ return (
               <div className="form-project-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">Job Description</label>
-                    <input type="text" className="form-control" id="description" style={{width: '735px', height: '100px'}}/>
+                    <input type="text" className="form-control" id="description" style={{width: '995px', height: '100px'}}/>
                   </div>
               </div>
 
@@ -44,12 +45,14 @@ return (
                   </div> 
               </div>
 
-              <div className="form-col">
-                    <button type="submit" className="project-btn btn-primary">cancel</button>
-                    <button type="submit" className="project-btn btn-primary">save</button>
-              </div>
 
-            </div>     
+
+            </div> 
+
+              <div className="btn-row-work-form">
+                <button type="submit" className="main-primary-btn">cancel</button>
+                <button type="submit" className="main-primary-btn">save</button>
+              </div>    
         </div>
     )
   }

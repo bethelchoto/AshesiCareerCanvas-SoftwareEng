@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import '../Styles/App.css';
 import '../Styles/MainCurriculum.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -8,7 +9,8 @@ const MainCurriculum = () => {
     const navigate = useNavigate()
 
   return (
-      <div className='main-curr'>
+      <div className='boarder-container'>
+        
             <div className="form-student-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">EXTRA CURRICULUM ACTIVITIES</label>
@@ -16,13 +18,13 @@ const MainCurriculum = () => {
                   <hr className="long-line"  style={{ width: '100%', border: '1px solid black' }}/>
             </div>
 
-        <div className='row-curriculum'>
+        <div className='row-grid'>
 
             <div className='left-side-curr'>
                 <CheckBoxIcon/>
             </div>
 
-            <div className='right-side-curr'>
+            <div className='right-side'>
 
                 <div className="labels-container">
                     <label htmlFor="label1">Organization :</label>
@@ -52,15 +54,15 @@ const MainCurriculum = () => {
             </div>
 
             <div> 
-                <button className='main-curr-btn'>Approved</button>
+                <button className='main-primary-btn'>Approved</button>
             </div>
         </div>
 
         <div className='btn-row-curr'> 
-            <button className='main-exp-btn'>Cancel</button>
-            <button className='main-exp-btn' onClick={()=> {navigate("/")}}>Edit</button>
-            <button className='main-exp-btn' onClick={()=> {navigate("/")}}>Delete</button>
-            <button className='main-exp-btn' onClick={()=> {navigate("/activities")}}>Add</button>
+            <button className='main-primary-btn'>Cancel</button>
+            <button className='main-primary-btn' onClick={()=> {navigate("/")}}>Edit</button>
+            <button className='main-primary-btn' onClick={()=> {navigate("/")}}>Delete</button>
+            <button className='main-primary-btn' onClick={()=> {navigate("/activities")}}>Add</button>
             
         </div> 
 

@@ -1,31 +1,5 @@
-.main-education{
+.btn-row-education-form {
     display: flex;
-    flex-direction: column;
-    margin-left: 30%;
-    margin-top: 50px;
-    height: 70vh; 
-    width: 80%;
-    border: 1px solid #d69f9f;
-    padding: 20px;
-    max-width: 800px;
-    border-radius: 8px;
-  }
-  
-  /* .moveble {
-    margin-top: 10px;
-  } */
-  
-  /* .form-col{
-    margin-top: 100px;
-  } */
-  
-  /* .archive-btn{
-    margin-left: 15px;
-    margin-top: 15px;
-    padding: 10px 100px;
-    background-color: #9F4848; 
-    color: white; 
-    border: none; 
-    cursor: pointer;
-  } */
-  
+    justify-content: space-between;
+    margin-top: 270px;
+}

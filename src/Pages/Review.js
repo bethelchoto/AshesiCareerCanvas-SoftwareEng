@@ -6,7 +6,8 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 const Review = () => {
   return (
-      <div className='main-experience'>
+      <div className='boarder-container'>
+        
             <div className="form-student-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">EXPERIENCE</label>
@@ -14,7 +15,7 @@ const Review = () => {
                   <hr className="long-line"  style={{ width: '100%', border: '1px solid black' }}/>
             </div>
 
-        <div className='row-experience'>
+        <div className='row-grid'>
 
             <div className='left-side-experience'>
                 <CheckBoxIcon/>
@@ -50,13 +51,13 @@ const Review = () => {
             </div>
 
             <div> 
-                <button className='main-exp-btn'>Approve</button>
+                <button className='main-primary-btn'>Approve</button>
             </div>
         </div>
 
         <div className='btn-row-exp'> 
-            <button className='main-exp-btn'>Cancel</button>
-            <button className='main-exp-btn'>Review</button>
+            <button className='main-primary-btn'>Cancel</button>
+            <button className='main-primary-btn'>Review</button>
         </div> 
 
 

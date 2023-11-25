@@ -1,24 +1,11 @@
-.main-education{
-    display: flex;
-    flex-direction: column;
-    margin-left: 20%;
-    margin-top: 20px;
-    height: 85%; 
-    width: 78%;
-    border: 1px solid #d69f9f;
-    padding: 20px;
-    max-width: 1100px;
-    max-height: 900px;
-    border-radius: 8px;
-}
-.long-line {
-    width: 80%; 
-    margin: 0 auto;
-    border: 5px solid transparent;
-    color: black;
+.btn-row-education{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 320px;
 }
 
-.row-education {
+
+/* .row-education {
   display: grid;
   grid-template-columns: auto 5fr; 
   display: flex;
@@ -28,18 +15,15 @@
   flex: 0 0 auto; 
 }
 
-.right-side {
-  flex: 3; 
-  margin-left: 20px;
-}
+
 
 .approval-status{
   flex: 3; 
   margin-left: 90px;
   margin-top: 10px;
-}
+} */
 
-.main-education-btn{
+/* .main-education-btn{
   height: 50px;
   width: 100px;
   margin-left: 500px;
@@ -53,5 +37,5 @@
   color: white; 
   border: none; 
   cursor: pointer;
-}
+} */
 

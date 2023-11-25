@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import '../Styles/App.css';
 import '../Styles/MainEducation.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -7,7 +8,8 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 const MainEducation = () => {
     const navigate = useNavigate()
   return (
-      <div className='main-education'>
+      <div className='boarder-container'>
+        
             <div className="form-student-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">EDUCATION</label>
@@ -15,13 +17,13 @@ const MainEducation = () => {
                   <hr className="long-line"  style={{ width: '100%', border: '1px solid black' }}/>
             </div>
 
-        <div className='row-education'>
+        <div className='row-grid'>
 
-                <div left-side>
-                    <CheckBoxIcon/>
-                </div>
+            <div left-side>
+                <CheckBoxIcon/>
+            </div>
 
-                <div className='right-side'>
+            <div className='right-side'>
 
                 <div className="labels-container">
                     <label htmlFor="label1">School :</label>
@@ -44,21 +46,23 @@ const MainEducation = () => {
                 </div> 
 
             </div>
+
             <div className='approval-status'>
-                <button type="submit" className="main-education-btn btn-primary">Approved</button>
+                <button type="submit" className="main-primary-btn">Approved</button>
             </div>
+
         </div>
     
-        <div className="form-project-row">
-            <div className="form-col">
-                <button type="submit" className="main-btn btn-primary">cancel</button>
-                <button type="submit" className="main-btn btn-primary">edit</button>
-                <button type="submit" className="main-btn btn-primary">delete</button>
-                <button type="submit" className="main-btn btn-primary" onClick={()=> {navigate("/education")}}> Add</button>
+        
+            <div className="btn-row-education">
+                <button type="submit" className="main-primary-btn">cancel</button>
+                <button type="submit" className="main-primary-btn">edit</button>
+                <button type="submit" className="main-primary-btn">delete</button>
+                <button type="submit" className="main-primary-btn" onClick={()=> {navigate("/education")}}> Add</button>
             </div>
 
         </div>     
-    </div>
+
         
 
   );

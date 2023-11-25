@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import '../Styles/MainSkill.css';
+import '../Styles/App.css';
+
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 const MainSkill = () => {
     const navigate = useNavigate()
   return (
-      <div className='main-skill'>
+      <div className='boarder-container'>
             <div className="form-student-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">SKILL</label>
@@ -46,10 +48,10 @@ const MainSkill = () => {
         </div>
 
         <div className='btn-row-skill' id='skills'> 
-            <button className='main-exp-btn' onClick={()=> {navigate("/")}}>Cancel</button>
-            <button className='main-exp-btn' onClick={()=> {navigate("/")}}>Edit</button>
-            <button className='main-exp-btn'onClick={()=> {navigate("/")}}>Delete</button>
-            <button className='main-exp-btn'onClick={()=> {navigate("/skills")}}>Add</button>
+            <button className='main-primary-btn' onClick={()=> {navigate("/")}}>Cancel</button>
+            <button className='main-primary-btn' onClick={()=> {navigate("/")}}>Edit</button>
+            <button className='main-primary-btn'onClick={()=> {navigate("/")}}>Delete</button>
+            <button className='main-primary-btn'onClick={()=> {navigate("/skills")}}>Add</button>
         </div> 
 
     </div>

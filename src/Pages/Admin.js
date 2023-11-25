@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import '../Styles/Admin.css';
+import '../Styles/App.css';
 
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
+
 
 const Admin = () => {
   return (
-      <div className='main-admin'>
+      <div className='boarder-container'>
             <div className="form-student-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">EXPERIENCE</label>
@@ -52,18 +53,16 @@ const Admin = () => {
             </div>
             <div className='left-side-admin'>
             <div> 
-                <button className='main-exp-btn' id='first'>Approve</button>
-                <button className='main-exp-btn'id='second'>Decline</button>
+                <button className='main-primary-btn' id='first'>Approve</button>
+                <button className='main-primary-btn' id='second'>Decline</button>
             </div>
             </div>
-
- 
         </div>
 
         <div className='btn-row-admin'> 
-            <button className='main-exp-btn'>Cancel</button>
-            <button className='main-exp-btn'>Review</button>
-            <button className='main-exp-btn'>Review</button>
+            <button className='main-primary-btn'>Cancel</button>
+            <button className='main-primary-btn'>Review</button>
+            <button className='main-primary-btn'>Review</button>
         </div> 
 
 

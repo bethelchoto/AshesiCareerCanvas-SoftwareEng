@@ -4,7 +4,7 @@ import Login from './Auth/Login';
 import Skills from './Pages/Skills';
 import Register from './Auth/Register';
 import Projects from "./Pages/Projects";
-import Education from "./Pages/Education";
+// import Education from "./Pages/Education";
 import Sidebar from './Components/Sidebar';
 import CoCurriculum from './Pages/Activity';
 import EducationForm from './Pages/Education';
