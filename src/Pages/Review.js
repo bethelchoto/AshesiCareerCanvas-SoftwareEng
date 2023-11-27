@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import '../Styles/App.css';
+import { Link } from "react-router-dom";
 import '../Styles/MainExperience.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
-const MainExperience = () => {
-    const navigate = useNavigate()
+const Review = () => {
   return (
       <div className='boarder-container'>
+        
             <div className="form-student-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">EXPERIENCE</label>
@@ -52,20 +51,19 @@ const MainExperience = () => {
             </div>
 
             <div> 
-                <button className='main-primary-btn'>Approved</button>
+                <button className='main-primary-btn'>Approve</button>
             </div>
         </div>
 
         <div className='btn-row-exp'> 
-            <button className='main-primary-btn' onClick={()=>{navigate("/")}}>Cancel</button>
-            <button className='main-primary-btn'>Edit</button>
-            <button className='main-primary-btn'>Delete</button>
-            <button className='main-primary-btn' onClick={()=>{navigate("/workexperience")}}>Add</button>
-            
+            <button className='main-primary-btn'>Cancel</button>
+            <button className='main-primary-btn'>Review</button>
         </div> 
+
+
 
     </div>
   );
 };
 
-export default MainExperience;
+export default Review;

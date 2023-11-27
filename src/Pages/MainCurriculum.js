@@ -1,37 +1,39 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import '../Styles/App.css';
-import '../Styles/MainExperience.css';
+import '../Styles/MainCurriculum.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
-const MainExperience = () => {
+const MainCurriculum = () => {
     const navigate = useNavigate()
+
   return (
       <div className='boarder-container'>
+        
             <div className="form-student-row">
                   <div className="form-group col-md-6">
-                    <label for="inputEmail4">EXPERIENCE</label>
+                    <label for="inputEmail4">EXTRA CURRICULUM ACTIVITIES</label>
                   </div>
                   <hr className="long-line"  style={{ width: '100%', border: '1px solid black' }}/>
             </div>
 
         <div className='row-grid'>
 
-            <div className='left-side-experience'>
+            <div className='left-side-curr'>
                 <CheckBoxIcon/>
             </div>
 
             <div className='right-side'>
 
                 <div className="labels-container">
-                    <label htmlFor="label1">School :</label>
-                    <span id="label1"> Ashesi University</span>
+                    <label htmlFor="label1">Organization :</label>
+                    <span id="label1"> PEN, Practical Education Network</span>
                 </div>
 
                 <div className="labels-container">
-                    <label htmlFor="label1">Program :</label>
-                    <span id="label1"> Computer Science</span>
+                    <label htmlFor="label1">Country :</label>
+                    <span id="label1"> Ghana</span>
                 </div>
 
                 <div className="labels-container">
@@ -56,11 +58,11 @@ const MainExperience = () => {
             </div>
         </div>
 
-        <div className='btn-row-exp'> 
-            <button className='main-primary-btn' onClick={()=>{navigate("/")}}>Cancel</button>
-            <button className='main-primary-btn'>Edit</button>
-            <button className='main-primary-btn'>Delete</button>
-            <button className='main-primary-btn' onClick={()=>{navigate("/workexperience")}}>Add</button>
+        <div className='btn-row-curr'> 
+            <button className='main-primary-btn'>Cancel</button>
+            <button className='main-primary-btn' onClick={()=> {navigate("/")}}>Edit</button>
+            <button className='main-primary-btn' onClick={()=> {navigate("/")}}>Delete</button>
+            <button className='main-primary-btn' onClick={()=> {navigate("/activities")}}>Add</button>
             
         </div> 
 
@@ -68,4 +70,4 @@ const MainExperience = () => {
   );
 };
 
-export default MainExperience;
+export default MainCurriculum;

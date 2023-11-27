@@ -13,7 +13,7 @@ const Projects=()=>{
   };
 
 return (
-        <div className='main-project'>
+        <div className='boarder-container'>
               <div className="form-project-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">Project Name</label>
@@ -42,7 +42,7 @@ return (
               <div className="form-project-row">
                   <div className="form-group col-md-6">
                     <label for="inputEmail4">Project Description</label>
-                    <input type="text" className="form-control" id="description" style={{width: '735px', height: '100px'}}/>
+                    <input type="text" className="form-control" id="description" style={{width: '990px', height: '100px'}}/>
                   </div>
               </div>
 
@@ -52,9 +52,9 @@ return (
                   </div> 
               </div>
 
-              <div className="form-col">
-                    <button type="submit" className="cancel">cancel</button>
-                    <button type="submit" className="save">save</button>
+              <div className="btn-row-project-form">
+                    <button type="submit" className="main-primary-btn">cancel</button>
+                    <button type="submit" className="main-primary-btn">save</button>
               </div>
             </div>
         </div>

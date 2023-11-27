@@ -59,6 +59,7 @@ return (
             {formSubmitted && <SuccessMessage />}
             {errorMessage && <ErrorMessage message={errorMessage} />}
         <div className='main-archive'>
+        <div className='boarder-container'>
               <div className="form-archive-row">
                   <div className="form-group col-md-6">
                     <label htmlFor="achievement_name">Achievement</label>
@@ -102,16 +103,16 @@ return (
 
               </div>     
 
-              <div className="form-project-row">
-                <div className="form-col">
-                      <button type="submit" className="archive-btn btn-primary">cancel</button>
-                      <button type="submit" className="archive-btn btn-primary">save</button>
-                </div>
+
+              <div className="btn-row-achievements">
+                  <button type="submit" className="main-primary-btn">cancel</button>
+                  <button type="submit" className="main-primary-btn">save</button>
               </div>
             </div>
             </form>
          
 
     )
-  }
+  
+}
 export default Achievements;

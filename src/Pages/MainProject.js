@@ -1,37 +1,37 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import '../Styles/App.css';
-import '../Styles/MainExperience.css';
+import '../Styles/MainProject.css';
 
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
-const MainExperience = () => {
+const MainProject = () => {
     const navigate = useNavigate()
   return (
       <div className='boarder-container'>
             <div className="form-student-row">
                   <div className="form-group col-md-6">
-                    <label for="inputEmail4">EXPERIENCE</label>
+                    <label for="inputEmail4">PROJECT</label>
                   </div>
                   <hr className="long-line"  style={{ width: '100%', border: '1px solid black' }}/>
             </div>
 
         <div className='row-grid'>
 
-            <div className='left-side-experience'>
+            <div className='left-side-project'>
                 <CheckBoxIcon/>
             </div>
 
             <div className='right-side'>
 
-                <div className="labels-container">
-                    <label htmlFor="label1">School :</label>
-                    <span id="label1"> Ashesi University</span>
+            <div className="labels-container-project">
+                    <label htmlFor="label1">Project Name : </label>
+                    <span id="label1"> Software Engineer</span>
                 </div>
 
                 <div className="labels-container">
-                    <label htmlFor="label1">Program :</label>
-                    <span id="label1"> Computer Science</span>
+                    <label htmlFor="label1">Project Owner : </label>
+                    <span id="label1"> Chotel Developers</span>
                 </div>
 
                 <div className="labels-container">
@@ -56,16 +56,15 @@ const MainExperience = () => {
             </div>
         </div>
 
-        <div className='btn-row-exp'> 
-            <button className='main-primary-btn' onClick={()=>{navigate("/")}}>Cancel</button>
+        <div className='btn-row-project'> 
+            <button className='main-primary-btn'>Cancel</button>
             <button className='main-primary-btn'>Edit</button>
             <button className='main-primary-btn'>Delete</button>
-            <button className='main-primary-btn' onClick={()=>{navigate("/workexperience")}}>Add</button>
-            
+            <button className='main-primary-btn' onClick={()=> {navigate("/projects")}}>Add</button>
         </div> 
 
     </div>
   );
 };
 
-export default MainExperience;
+export default MainProject;
