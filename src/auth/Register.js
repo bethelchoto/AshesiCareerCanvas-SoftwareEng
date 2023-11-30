@@ -1,30 +1,81 @@
 import { useState } from "react";
 import '../Styles/Register.css';
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const Register=()=>{
+const Register=(props)=>{
+
+
+    
+    let history = useNavigate();
     const [data, setData] = useState({
-        first_name:"",
-        last_name:"",
-        email:"",
-        password:""
-    })
-    const handleChange=(e)=>{
-        setData({...data, [e.target.name]: e.target.value});
-        // console.log(data);
-    }
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: ""
+    });
 
-    const submitForm=(e)=>{
+    const submitForm = async (e) => {
         e.preventDefault();
-        data = {
-            first_name:data.first_name,
-            last_name:data.last_name,
-            email:data.email,
-            password:data.password
+        const sendData = {
+            first_name: data.first_name,
+            last_name: data.last_name,
+            email: data.email,
+            password: data.password
+        };
+    
+        try {
+            // Use axios.post for making the HTTP request
+            const result = await axios.post('http://localhost/phpReact/register.php', sendData);
+    
+            if (result.data.Status === 'Invalid') {
+                alert('Invalid User');
+            } else {
+                // Redirect to the login page after successful registration
+                history('/login');
+            }
+        } catch (error) {
+            // Handle the error
+            console.error("Error during registration:", error);
+    
+            // You can show a user-friendly error message here
+            alert("An error occurred during registration. Please try again later.");
         }
-
-        console.log()
     }
+    
+
+    // const submitForm = (e) => {
+    //     e.preventDefault();
+    //     const sendData = {
+    //         first_name: data.first_name,
+    //         last_name: data.last_name,
+    //         email: data.email,
+    //         password: data.password
+    //     };
+
+    //     // Make sure to log sendData for debugging
+    //     console.log(sendData);
+
+    //     // Use axios.post for making the HTTP request
+    //     axios.post('http://localhost/phpReact/register.php', sendData)
+    //         .then((result) => {
+    //             if (result.data.Status === 'Invalid') {
+    //                 alert('Invalid User');
+    //             } else {
+    //                 history('/login');
+    //             }
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error during registration:", error);
+    //         });
+    // }
+
+    const handleChange = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value });
+        console.log(data);
+    }
+
     return (
         <div className="main-box" >
             <form onSubmit={submitForm}>
@@ -77,7 +128,7 @@ const Register=()=>{
                 </div>
 
                 <div className="row">
-                    <div className="col-md-12 text-center"><h6>Already have an account ? <Link to ="/login"> Login </Link></h6></div>
+                    <div className="col-md-12 text-center"><h6>Already have an account ? <Link to ="/"> Login </Link></h6></div>
                 </div>
             </form>
         </div>
@@ -85,3 +136,49 @@ const Register=()=>{
 }
 
 export default Register;
+
+
+
+
+
+
+    // let history = useNavigate();
+
+    // const [data, setData] = useState({
+    //     first_name:"",
+    //     last_name:"",
+    //     email:"",
+    //     password:""
+    // });
+
+    // const submitForm=(e)=>{
+    //     e.preventDefault();
+    //    const sendData = {
+    //         first_name:data.first_name,
+    //         last_name:data.last_name,
+    //         email:data.email,
+    //         password:data.password
+    //     }
+ 
+    //     // console.log(sendData)
+    // }
+
+    // const handleChange=(e)=>{
+    //     // setData((data) => {
+    //     //     const updatedData = { ...data, [e.target.name]: e.target.value };
+    //     //     console.log(updatedData);
+    //     //     return updatedData;
+    //     // });
+
+    //     setData({...data, [e.target.name]: e.target.value});
+    //     console.log(data);
+
+    //     axios.post('http://localhost/phpReact/register.php', sendData)
+    //     .then((result)=> {
+    //         if (result.data.Status == 'Invalid'){
+    //             alert('Invalid User');
+    //         }else{
+    //             history('/login');
+    //         }
+    //     })
+    // }
