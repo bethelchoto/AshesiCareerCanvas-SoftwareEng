@@ -1,8 +1,8 @@
 import "./Styles/App.css";
 import Home from './Pages/Home';
-import Login from './Auth/Login';
+import Login from './auth/Login';
 import Skills from './Pages/Skills';
-import Register from './Auth/Register';
+import Register from './auth/Register';
 import Projects from "./Pages/Projects";
 // import Education from "./Pages/Education";
 import Sidebar from './Components/Sidebar';
