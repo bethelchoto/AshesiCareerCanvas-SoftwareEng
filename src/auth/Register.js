@@ -5,10 +5,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Register=(props)=>{
-
-
     
     let history = useNavigate();
+    
     const [data, setData] = useState({
         first_name: "",
         last_name: "",
@@ -44,45 +43,52 @@ const Register=(props)=>{
         }
     }
     
-
-    // const submitForm = (e) => {
-    //     e.preventDefault();
-    //     const sendData = {
-    //         first_name: data.first_name,
-    //         last_name: data.last_name,
-    //         email: data.email,
-    //         password: data.password
-    //     };
-
-    //     // Make sure to log sendData for debugging
-    //     console.log(sendData);
-
-    //     // Use axios.post for making the HTTP request
-    //     axios.post('http://localhost/phpReact/register.php', sendData)
-    //         .then((result) => {
-    //             if (result.data.Status === 'Invalid') {
-    //                 alert('Invalid User');
-    //             } else {
-    //                 history('/login');
-    //             }
-    //         })
-    //         .catch((error) => {
-    //             console.error("Error during registration:", error);
-    //         });
-    // }
-
     const handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });
         console.log(data);
     }
 
+    const [userType, setUserType ] = useState("");
+    const [secretKey, setSecretKey] = useState("");
+    
+
     return (
         <div className="main-box" >
-            <form onSubmit={submitForm}>
+
+        <form onSubmit={submitForm}>    
 
             <div className="row">
                 <div className="col-md-12 text-center"><h1>Create an account</h1></div>
             </div>
+
+            <div className="radioButtons">
+            Select User Type: 
+            <input
+              type="radio"
+              name="UserType"
+              value="User"
+              onChange={(e) => setUserType(e.target.value)}
+            />
+            User
+            <input
+              type="radio"
+              name="UserType"
+              value="Admin"
+              onChange={(e) => setUserType(e.target.value)}
+            />
+            Admin
+          </div>
+
+          {userType === "Admin" ? (
+            <div className="row">
+                <div className="row-md-6"> Secret Key</div>
+                <div className="row-md-6">
+                    <input type="text" name="secret_key" className="form-control"
+                    // onChange={handleChange} value={data.first_name}
+                    />
+                </div>
+            </div>
+          ) : null}
 
                 <div className="row">
                     <div className="row-md-6"> First Name</div>
@@ -96,7 +102,6 @@ const Register=(props)=>{
 
                 <div className="row">
                     <div className="row-md-6"> Last Name</div>
-                    
                     <div className="row-md-6">
                         <input type="text" name="last_name" className="form-control"
                         onChange={handleChange} value={data.last_name}
@@ -140,45 +145,3 @@ export default Register;
 
 
 
-
-
-    // let history = useNavigate();
-
-    // const [data, setData] = useState({
-    //     first_name:"",
-    //     last_name:"",
-    //     email:"",
-    //     password:""
-    // });
-
-    // const submitForm=(e)=>{
-    //     e.preventDefault();
-    //    const sendData = {
-    //         first_name:data.first_name,
-    //         last_name:data.last_name,
-    //         email:data.email,
-    //         password:data.password
-    //     }
- 
-    //     // console.log(sendData)
-    // }
-
-    // const handleChange=(e)=>{
-    //     // setData((data) => {
-    //     //     const updatedData = { ...data, [e.target.name]: e.target.value };
-    //     //     console.log(updatedData);
-    //     //     return updatedData;
-    //     // });
-
-    //     setData({...data, [e.target.name]: e.target.value});
-    //     console.log(data);
-
-    //     axios.post('http://localhost/phpReact/register.php', sendData)
-    //     .then((result)=> {
-    //         if (result.data.Status == 'Invalid'){
-    //             alert('Invalid User');
-    //         }else{
-    //             history('/login');
-    //         }
-    //     })
-    // }

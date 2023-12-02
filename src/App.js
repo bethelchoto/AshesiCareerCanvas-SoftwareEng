@@ -1,8 +1,8 @@
 import "./Styles/App.css";
 import Home from './Pages/Home';
-import Login from './auth/Login';
+import Login from './Auth/Login';
 import Skills from './Pages/Skills';
-import Register from './auth/Register';
+import Register from './Auth/Register';
 import Projects from "./Pages/Projects";
 // import Education from "./Pages/Education";
 import Sidebar from './Components/Sidebar';
@@ -22,6 +22,7 @@ import MainSkill from "./Pages/MainSkill";
 import MainAchievement from "./Pages/MainAchievement";
 import Review from "./Pages/Review";
 import Admin from "./Pages/Admin";
+import Resume from "./Components/Resume";
 
 
 function App() {
@@ -60,6 +61,8 @@ function App() {
               <Route path="/mainskill" element={<MainSkill/>} />
               <Route path="/mainachievement" element={<MainAchievement/>} />
               <Route path="/review" element={<Review/>} />
+
+              <Route path="/resume" element={<Resume/>} />
 
               {/* Admin page */}
               <Route path="/admin" element={<Admin/>} />

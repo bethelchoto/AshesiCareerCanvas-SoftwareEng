@@ -5,8 +5,12 @@
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    height: 70%;
   }
 
-.row{
-  padding-top: 10px;
+
+.radioButtons{
+  display: flex;
+  justify-content: 3px;
 }
+
