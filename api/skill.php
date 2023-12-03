@@ -12,20 +12,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $json_data = file_get_contents("php://input");
     $data = json_decode($json_data);
 
-    // Validate and sanitize the data (you might need to improve this based on your requirements)
-    $projectName = mysqli_real_escape_string($conn, $data->projectName);
-    $projectOwner = mysqli_real_escape_string($conn, $data->projectOwner);
-    $startDate = mysqli_real_escape_string($conn, $data->startDate);
-    $endDate = mysqli_real_escape_string($conn, $data->endDate);
-    $projectDescription = mysqli_real_escape_string($conn, $data->projectDescription);
-    $studentId = 123; // Replace with the actual student ID
+    $student_id = intval($data->student_id); 
 
-    // Insert data into the 'project' table using prepared statements
-    $sql = "INSERT INTO project (project_name, owner, start_date, end_date, project_description, student_id)
-            VALUES (?, ?, ?, ?, ?, ?)";
+    // Validate and sanitize the data (you might need to improve this based on your requirements)
+    $skill_name = mysqli_real_escape_string($conn, $data->skill_name);
+    
+    
+    // Insert data into the 'education' table using prepared statements
+    $sql = "INSERT INTO skill(skill_name, student_id)
+            VALUES (?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssi", $projectName, $projectOwner, $startDate, $endDate, $projectDescription, $studentId);
+    $stmt->bind_param("si", $skill_name, $student_id);
 
     if ($stmt->execute()) {
         echo json_encode(array("message" => "Record inserted successfully"));
@@ -40,4 +38,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 // Close the database connection
 $conn->close();
-?>

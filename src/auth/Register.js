@@ -26,7 +26,7 @@ const Register=(props)=>{
     
         try {
             // Use axios.post for making the HTTP request
-            const result = await axios.post('http://localhost/phpReact/register.php', sendData);
+            const result = await axios.post('http://localhost/api/register.php', sendData);
     
             if (result.data.Status === 'Invalid') {
                 alert('Invalid User');

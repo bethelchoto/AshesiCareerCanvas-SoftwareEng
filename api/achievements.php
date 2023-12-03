@@ -12,20 +12,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $json_data = file_get_contents("php://input");
     $data = json_decode($json_data);
 
-    // Validate and sanitize the data (you might need to improve this based on your requirements)
-    $universityName = mysqli_real_escape_string($conn, $data->universityName);
-    $programOfStudy = mysqli_real_escape_string($conn, $data->programOfStudy);
-    $startDate = mysqli_real_escape_string($conn, $data->startDate);
-    $endDate = mysqli_real_escape_string($conn, $data->endDate);
-    
+    $student_id = intval($data->student_id); 
 
+    // Validate and sanitize the data (you might need to improve this based on your requirements)
+    $achievement_name = mysqli_real_escape_string($conn, $data->achievement_name);
+    $organization_name = mysqli_real_escape_string($conn, $data->organization_name);
+    $year_attained = mysqli_real_escape_string($conn, $data->year_attained);
 
     // Insert data into the 'education' table using prepared statements
-    $sql = "INSERT INTO education (university_name, program_of_study, start_date, end_date)
-            VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO achievement(achievement_name, organization_name, year_attained,student_id)
+            VALUES (?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssi", $universityName, $programOfStudy, $startDate, $endDate);
+    $stmt->bind_param("sssi",$achievement_name, $organization_name, $year_attained,$student_id);
 
     if ($stmt->execute()) {
         echo json_encode(array("message" => "Record inserted successfully"));
@@ -41,3 +40,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 // Close the database connection
 $conn->close();
 ?>
+
+

@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (password_verify($password, $hashedPassword)) {
             // Passwords match, login successful
             $student_id = $row['student_id'];
-            $profile_url = "http://localhost/careercanvas/student.php?student_id=$student_id";
+            $profile_url = "http://localhost/api/student.php?student_id=$student_id";
             echo json_encode(array("message" => "Logged in", "student_id" => $student_id));
         } else {
             // Passwords do not match, login failed

@@ -13,32 +13,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = json_decode($json_data);
 
     // Validate and sanitize the data (you might need to improve this based on your requirements)
-    $student_id = intval($data->student_id); // Assuming student_id is present in formData
-    echo json_encode(array("message" => "Logged in", "student_id" => $student_id));
-    
+    $student_id = intval($data->student_id); 
+
     $githubUsername = mysqli_real_escape_string($conn, $data->githubUsername);
     $linkedInProfile = mysqli_real_escape_string($conn, $data->linkedInProfile);
     $phoneNumber = mysqli_real_escape_string($conn, $data->phoneNumber);
     $city = mysqli_real_escape_string($conn, $data->city);
     $country = mysqli_real_escape_string($conn, $data->country);
     $address = mysqli_real_escape_string($conn, $data->address);
+
     // Update the student record in the database based on the student ID
-     // Insert data into the 'education' table using prepared statements
-    $sql = "INSERT INTO studentProfile (github_username, linkedin_profile, phone_number, city, country, address,student_id)
-            VALUES (?, ?, ?, ?, ?,?,?)";
+    // Insert data into the 'education' table using prepared statements
+    $sql = "INSERT INTO studentprofile (github, linkedin, phonenumber, city, country, addresss, student_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssi",$githubUsername , $linkedInProfile ,$phoneNumber ,$city, $country,$address, $student_id);
 
+    if ($stmt) {
+        $stmt->bind_param('ssssssi', $githubUsername, $linkedInProfile, $phoneNumber, $city, $country, $address, $student_id);
 
-   if ($stmt->execute()) {
-        echo json_encode(array("message" => "Record inserted successfully"));
+        if ($stmt->execute()) {
+            echo json_encode(array("message" => "Record inserted successfully"));
+        } else {
+            echo json_encode(array("error" => "Error executing prepared statement: " . $stmt->error));
+        }
+
+        $stmt->close();
     } else {
-        echo json_encode(array("error" => "Error: " . $stmt->error));
+        echo json_encode(array("error" => "Error preparing statement: " . $conn->error));
     }
-
-    $stmt->close();
-
 } else {
     // Invalid request method
     echo json_encode(array('error' => 'Invalid request method'));
