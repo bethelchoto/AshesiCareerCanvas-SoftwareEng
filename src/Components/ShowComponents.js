@@ -7,7 +7,7 @@ const ShowComponents = ({children}) => {
   const [ShowComponents, setShowComponents] = useState(false)
 
   useEffect(()=>{
-    if (location.pathname === '/login' || location.pathname === '/register'){
+    if (location.pathname === '/login' || location.pathname === '/register'|| location.pathname === '/ashesiresume'){
         setShowComponents(false)
     }else{
         setShowComponents(true)

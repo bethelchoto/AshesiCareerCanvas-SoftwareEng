@@ -26,7 +26,7 @@ const HeaderNavbar = () => {
           </li>
           
           <li className="nav-item">
-            <Link to="/masterresume" className="nav-link">Master Resume</Link>
+            <Link to="/ashesiresume" className="nav-link">Ashesi Resume</Link>
           </li>
 
         </ul>

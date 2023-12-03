@@ -23,6 +23,9 @@ import MainAchievement from "./Pages/MainAchievement";
 import Review from "./Pages/Review";
 import Admin from "./Pages/Admin";
 import MasterResume from "./Resume/MasterResume";
+import CV from "./Resume/Resume";
+import Resume from "./Resume/Resume";
+import AshesiResume from "./Resume/AshesiResume";
 
 
 function App() {
@@ -69,6 +72,8 @@ function App() {
 
 
               <Route path="/masterresume" element={<MasterResume/>} />
+
+              <Route path="/ashesiresume" element={<AshesiResume/>} />
             </Routes>
           </switch>
       </div>
