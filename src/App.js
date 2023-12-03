@@ -22,7 +22,7 @@ import MainSkill from "./Pages/MainSkill";
 import MainAchievement from "./Pages/MainAchievement";
 import Review from "./Pages/Review";
 import Admin from "./Pages/Admin";
-import Resume from "./Components/Resume";
+import MasterResume from "./Resume/MasterResume";
 
 
 function App() {
@@ -62,10 +62,13 @@ function App() {
               <Route path="/mainachievement" element={<MainAchievement/>} />
               <Route path="/review" element={<Review/>} />
 
-              <Route path="/resume" element={<Resume/>} />
+              {/* <Route path="/resume" element={<Resume/>} /> */}
 
               {/* Admin page */}
               <Route path="/admin" element={<Admin/>} />
+
+
+              <Route path="/masterresume" element={<MasterResume/>} />
             </Routes>
           </switch>
       </div>
