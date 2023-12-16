@@ -28,3 +28,7 @@
 .row-admin > :nth-child(3) {
     background-color: #64b5f6; 
 }
+.main-studenthomepage{
+    margin-left: 520px;
+    margin-top: 100px;
+}

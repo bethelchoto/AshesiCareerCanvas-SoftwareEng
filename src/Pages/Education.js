@@ -53,6 +53,10 @@ const Education = () => {
       [name]: value,
     });
   };
+  
+  const handleBack =(e) =>{
+    navigate("/maineducation")
+  }
 
   const handleSave = async (e) => {
     e.preventDefault();
@@ -173,8 +177,11 @@ const Education = () => {
       </div>
 
       <div className="btn-row-education-form">
+      <button type="submit" className="main-primary-btn" onClick={handleBack}>
+          Back
+        </button>
         <button type="button" className="main-primary-btn" onClick={handleSave}>
-          save
+          Save
         </button>
       </div>
     </div>

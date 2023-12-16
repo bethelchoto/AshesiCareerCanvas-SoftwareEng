@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Collect JSON data from the request body
     $json_data = file_get_contents("php://input");
     $data = json_decode($json_data);
-
+    
     $student_id = intval($data->student_id); 
 
 
@@ -20,15 +20,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $project_owner = mysqli_real_escape_string($conn, $data->project_owner);
     $start_date = mysqli_real_escape_string($conn, $data->start_date);
     $end_date = mysqli_real_escape_string($conn, $data->end_date);
-    $project_description = mysqli_real_escape_string($conn, $data->project_descriptionn);
- 
+    $project_description = mysqli_real_escape_string($conn, $data->project_description);
+    $project_descriptionone = mysqli_real_escape_string($conn, $data->project_descriptionone);
+    $project_descriptiontwo = mysqli_real_escape_string($conn, $data->project_descriptiontwo);
+
 
     // Insert data into the 'project' table using prepared statements
-    $sql = "INSERT INTO project (project_name, project_owner, start_date, end_date, project_description, student_id)
-            VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO project (project_name, project_owner, start_date, end_date, project_description,project_descriptionone,project_descriptiontwo, student_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?,?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssi", $project_name, $project_owner, $start_date, $end_date, $project_description, $student_id);
+    $stmt->bind_param("sssssssi", $project_name, $project_owner, $start_date, $end_date, $project_description, $project_descriptionone,$project_descriptiontwo, $student_id);
 
     if ($stmt->execute()) {
         echo json_encode(array("message" => "Record inserted successfully"));

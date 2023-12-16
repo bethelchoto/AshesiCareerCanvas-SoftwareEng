@@ -5,6 +5,8 @@
     box-sizing: border-box;
     overflow-y: auto; 
     background-color: aqua;
+    margin-top: 90px;
+    margin-left:400px;
   }
   
   .container-resume header {
@@ -48,6 +50,12 @@
     font-size: 14px;
     margin-bottom: 5px; 
   }
+
+  header h6 {
+    font-family: Verdana, sans-serif;
+    font-size: 8px;
+    margin-bottom: 5px; 
+  }
   
   .header {
     font-family: Verdana, sans-serif;
@@ -67,16 +75,16 @@
 
   .school {
     display: inline-block;
-    width: 83%; 
+    width: 94%; 
   }
   
   .degree {
     display: inline-block;
-    width: 92%; 
+    width: 90%; 
   }
   .experience{
     display: inline-block;
-    width: 90%;
+    width: 86%;
 
   }
 
@@ -104,4 +112,11 @@
     max-height: 450px; /* Adjust the max height as needed */
     overflow-y: auto; /* Enable vertical scrolling */
     padding: 10px; /* Add padding for better aesthetics */
+  }
+
+.trial-font{
+  /* background-color: blue; */
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 8px;
+
   }

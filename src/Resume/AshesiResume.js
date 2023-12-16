@@ -1,240 +1,377 @@
-import React, { useState } from 'react';
 import '../Styles/Resume.css';
-
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import {View, Text} from 'react-native';
 
 const AshesiResume = () => {
-  const [personalInfo, setPersonalInfo] = useState({
-    name: 'Bethel Choto',
-    email: 'john.doe@example.com',
-    phone: '+233 20 924 6391',
-    address: '1 University Avenue, Berekuso Eastern Region, Accra Ghana ',
-    linkedin: 'https://www.linkedin.com/in/bethel-panashe-choto/',
-    nationality: "Zimbabwean"
-  });
 
-  const [education, setEducation] = useState([
-    {
-      school:'Ashesi University',
-      location: "Berekuso, Eastern Region ",
-      degree: 'Bachelor of Science in Computer Science',
-      year: '2015-2019',
-    },
-  ]);
+  const navigate = useNavigate()
 
-  const [awards, setAwards] = useState([
-    {
-      award:'Second Place in a Wikipedia creative writing competition',
-      school:'Ashesi University',
-      year: '2019',
-    },
-  ]);
-
-  const [experience, setExperience] = useState([
-    {
-      location:'Chinhoyi, Zimbabwe',
-      position: 'Software Developer',
-      company: 'Tech Solutions Inc.',
-      year: '2019-present',
-      responsibilities: [
-        'Developing and maintainingures and functionalities..',
-      ],
-    },
-    {
-      location:'Chinhoyi, Zimbabwe',
-      position: 'Software Developer',
-      company: 'Tech Solutions Inc.',
-      year: '2019-present',
-      responsibilities: [
-        'Developing and maintainingures and functionalities..Collaborating with cross-functional teams.Developing and maintainingures and functionalities..Collaborating with cross-functional teams.Developing and maintainingures and functionalities..Collaborating with cross-functional teams.',
-        
-      ],
-    },
-  ]);
-
-  const [project, setProject] = useState([
-    {
-      location:'Chinhoyi, Zimbabwe',
-      position: 'Software Developer',
-      company: 'Tech Solutions Inc.',
-      year: '2019-present',
-      responsibilities: [
-        'Developing and maintainingures and functionalities..',
-      ],
-    },
-    {
-      location:'Chinhoyi, Zimbabwe',
-      position: 'Software Developer',
-      company: 'Tech Solutions Inc.',
-      year: '2019-present',
-      responsibilities: [
-        'Developing and maintainingures and functionalities..Collaborating with cross-functional teams.Developing and maintainingures and functionalities..Collaborating with cross-functional teams.Developing and maintainingures and functionalities..Collaborating with cross-functional teams.',
-      ],
-    },
-  ]);
-
-  const [coactivities, setCoActivities] = useState([
-    {
-      location:'Chinhoyi, Zimbabwe',
-      position: 'Software Developer',
-      company: 'Tech Solutions Inc.',
-      year: '2019-present',
-      responsibilities: [
-        'Developing and maintainingures and functionalities..',
-      ],
-    },
-    {
-      location:'Chinhoyi, Zimbabwe',
-      position: 'Software Developer',
-      company: 'Tech Solutions Inc.',
-      year: '2019-present',
-      responsibilities: [
-        'Developing and maintainingures and functionalities..Collaborating with cross-functional teams.Developing and maintainingures and functionalities..Collaborating with cross-functional teams.Developing and maintainingures and functionalities..Collaborating with cross-functional teams.',
-      ],
-    },
-  ]);
-
-
+  const [educationData, setEducationData] = useState([]);
+  const [studentData, setStudentData] = useState([]);
+  const [achievementData, setachievementData] = useState([]);
+  const [experienceData, setExperienceData] = useState([]);
+  const [projectData, setProjectData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [curriculumData, setCurriculumData] = useState([]);
+  const [skillData, setskillData] = useState([]);
 
   const [skills, setSkills] = useState(['JavaScript']);
 
+     // Fetch education data from the backend when the component mounts
+useEffect(() => {
+  const educationData = async () => {
+    try {
+      const studentId = sessionStorage.getItem("studentId");
+
+      const response = await fetch(
+        `http://localhost/api/getEducationData.php?student_id=${studentId}`
+      );
+      const data = await response.json();
+      console.log("API Response:", data);
+
+      if (response.ok) {
+        setEducationData(data);
+      } else {
+        console.error("Error fetching experience data");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false); 
+    }
+  };
+
+
+  const studentData = async () => {
+    try {
+      const studentId = sessionStorage.getItem("studentId");
+
+      const response = await fetch(
+        `http://localhost/api/getstudent.php?student_id=${studentId}`
+      );
+      const data = await response.json();
+      console.log("API Response:", data);
+
+      if (response.ok) {
+        setStudentData(data);
+      } else {
+        console.error("Error fetching student data");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false); 
+    }
+  };
+  const achievmentData = async () => {
+    try {
+        const studentId = sessionStorage.getItem("studentId");
+
+        const response = await fetch(
+        `http://localhost/api/getachievement_cv.php?student_id=${studentId}`
+        );
+        
+        const data = await response.json();
+        console.log("API Response:", data);
+
+        if (response.ok) {
+          setachievementData(data);
+        } else {
+        console.error("Error fetching Achievement data");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    } finally {
+        setLoading(false); 
+    }
+    };
+    const experiencData = async () => {
+      try {
+        const studentId = sessionStorage.getItem("studentId");
+
+        const response = await fetch(
+          `http://localhost/api/getExperience_cv.php?student_id=${studentId}`
+        );
+        const data = await response.json();
+        console.log("API Response:", data);
+
+        if (response.ok) {
+          setExperienceData(data);
+        } else {
+          console.error("Error fetching experience data");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        setLoading(false); 
+      }
+    };
+
+    const projectData = async () => {
+      try {
+        const studentId = sessionStorage.getItem("studentId");
+
+        const response = await fetch(
+          `http://localhost/api/getProject_cv.php?student_id=${studentId}`
+        );
+        const data = await response.json();
+        console.log("API Response:", data);
+
+        if (response.ok) {
+          setProjectData(data);
+        } else {
+          console.error("Error fetching project data");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const curriculumData = async () => {
+      try {
+        const studentId = sessionStorage.getItem("studentId");
+
+        const response = await fetch(
+          `http://localhost/api/getcurriculum_cv.php?student_id=${studentId}`
+        );
+        const data = await response.json();
+        console.log("API Response:", data);
+
+        if (response.ok) {
+          setCurriculumData(data);
+        } else {
+          console.error("Error fetching project data");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+
+    const skillData = async () => {
+      try {
+        const studentId = sessionStorage.getItem("studentId");
+
+        const response = await fetch(
+          `http://localhost/api/getskill_cv.php?student_id=${studentId}`
+        );
+        const data = await response.json();
+        console.log("API Response:", data);
+
+        if (response.ok) {
+          setskillData(data);
+        } else {
+          console.error("Error fetching project data");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+
+  educationData();
+  studentData();
+  achievmentData();
+  experiencData();
+  projectData();
+  projectData();
+  skillData();
+  curriculumData();
+}, []); 
+
+if (loading) {
+  return <p>Loading...</p>; // You can replace this with a loading spinner or any other loading indicator
+}
+
+if (
+  !Array.isArray(studentData) ||
+  studentData.length === 0 ||
+  studentData.message
+) {
   return (
+    <div className="boarder-container">
+      <div className="form-student-row">
+        <div className="form-group col-md-6">
+          <label htmlFor="inputEmail4">Student </label>
+          <hr
+            className="long-line"
+            style={{ width: "100%", border: "1px solid black" }}
+          />
+        </div>
+      </div>
+      <div className="right-side">
+        <div className="labels-container">
+          <label htmlFor="label1">
+            {studentData.message || "No infomation found for this student data"}
+          </label>
+        </div>
+      </div>
+
+      <div className="btn-row-education">
+        <button
+          type="submit"
+          className="main-primary-btn"
+          onClick={() => navigate("/curriculum")}
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  );
+}
+
+return (
 
     <div className='container-resume'>
 
+      {studentData.map((studentItem) => (
       <header>
-            <h5>{personalInfo.name}</h5>   
-            <h6 className='header'>{personalInfo.address}</h6>
-            <h6 className='header'>{personalInfo.phone} | {personalInfo.nationality} </h6>
-            <h6 className='header'>{personalInfo.email} | {personalInfo.linkedin} </h6>
+            <strong style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:14, color:'black'}}>{studentItem.full_name}</strong>   
+            <h6 style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}} className='header'>{studentItem.addresss}  {studentItem.city}</h6>
+            <h6 style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}} className='header'>{studentItem.phonenumber} | {studentItem.country} </h6>
+            <h6 style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}} className='header'>{studentItem.email} | {studentItem.linkedin} | {studentItem.github}</h6>
       </header>
+      ))}
 
       <div className='inner_container'>
-
         <section>
-        <h5 className='nameTag' style={{ marginBottom: '0px' }}>EDUCATION</h5>
+        <h5 className='nameTag' style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}}>EDUCATION</h5>
             <hr className="long"  style={{  width: '100%', margin: '0 auto', border: '1px solid black', borderColor: 'black' }}/>
             <ul>
-            {education.map((edu, index) => (
-                <li key={index}>
-                <strong className="school">{edu.school}</strong> <strong><span className="location">{edu.location}</span></strong>
+            {educationData.map((educationItem) => (
+                <li>
+                <strong className="school">{educationItem.university_name}</strong> <strong><span className="location">{educationItem.location}</span></strong>
                 </li>
             ))}
-            {education.map((edu, index) => (
-                <li key={index}>
-                <strong className="degree">{edu.degree}</strong> <strong>{edu.year}</strong>
+            {educationData.map((educationItem) => (
+                <li>
+                <strong className="degree">{educationItem.program_of_study}</strong> <strong>{educationItem.start_date}-{educationItem.end_date}</strong>
                 </li>
             ))}
+            </ul>
+        </section>
+
+        <section>
+        <strong className='nameTag' style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}}>ACHIEVEMENTS/AWARDS</strong>
+            <hr className="long"  style={{  width: '100%', margin: '0 auto', border: '1px solid black', borderColor: 'black' }}/>
+            <ul>
+            {achievementData.map((achievementItem) => (
+                <li key={achievementItem.achievment_id}>
+                <strong className="awards">{achievementItem.achievement_name} - {achievementItem.organization_name}</strong> <strong><span className="">{achievementItem.year_attained}</span></strong>
+                </li>
+            ))}
+
             </ul>
             
         </section>
 
         <section>
-        <h5 className='nameTag' style={{ marginBottom: '0px' }}>ACHIEVEMENTS/AWARDS</h5>
+            <strong className='nameTag' style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}}>WORK EXPERIENCE</strong>
             <hr className="long"  style={{  width: '100%', margin: '0 auto', border: '1px solid black', borderColor: 'black' }}/>
-            <ul>
-            {awards.map((award, index) => (
-                <li key={index}>
-                {/* <strong className="school">{}</strong> <strong><span className="location">{}</span></strong> */}
-                <strong className="awards">{award.award} - {award.school}</strong> <strong><span className="">{award.year}</span></strong>
+
+            <ul className='trial-font'>
+
+            {experienceData.map((experienceItem) => (
+                <li style={{fontFamily:'verdana', fontSize:8.5}} key={experienceItem.experience_id}  >
+                <strong numberOfLines={1} ellipsizeMode="tail" className="experience">{experienceItem.organization_name} - {experienceItem.city},{experienceItem.country}</strong> <strong><span className="">{experienceItem.start_date}-{experienceItem.end_date}</span></strong>
+                <strong className="experience">{experienceItem.position} </strong>
+
+                {experienceData.map((experienceItem) => (
+                    <View style={{fontFamily:'verdana', fontSize:8.5, color:'black'}} key={experienceItem.experience_id}>
+                       <Text style={{fontFamily:'verdana', fontSize:8.5}}> • {experienceItem.job_description}</Text>
+                       <Text style={{fontFamily:'verdana', fontSize:8.5}}> • {experienceItem.job_descriptionone}</Text>
+                       <Text style={{fontFamily:'verdana', fontSize:8.5}}> • {experienceItem.job_descriptiontwo}</Text>
+
+                    </View>
+                    ))};
+             
                 </li>
             ))}
-            {/* {education.map((award, index) => (
-                <li key={index}>
-                <strong className="degree">{edu.degree}</strong> <strong>{edu.year}</strong>
-                </li>
-            ))} */}
             </ul>
-            
         </section>
 
         <section>
-            <h5 className='nameTag' style={{ marginBottom: '0px' }}>WORK EXPERIENCE</h5>
+            <strong className='nameTag' style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}}>PROJECT AND RESEARCH </strong>
             <hr className="long"  style={{  width: '100%', margin: '0 auto', border: '1px solid black', borderColor: 'black' }}/>
             <ul>
 
-            {experience.map((exp, index) => (
-                <li key={index} >
-                <strong className="experience">{exp.company} - {exp.location}</strong> <strong><span className="">{exp.year}</span></strong>
-                <strong className="experience">{exp.position} </strong>
+            {projectData.map((projectItem) => (
+                <li key={projectItem.project_id} >
+                <strong className="experience">{projectItem.project_name} - {projectItem.project_owner}</strong> <strong><span className="">{projectItem.start_date}-{projectItem.end_date}</span></strong>
+                
 
-                <ul>
-                    {exp.responsibilities.map((res, i) => (
-                    <li key={i}>{res}</li>
+                {projectData.map((projectItem) => (
+                    <View style={{fontFamily:'verdana', fontSize:8.5}} key={projectItem.experience_id}>
+                       <Text style={{fontFamily:'verdana', fontSize:8.5}}> • {projectItem.project_description}</Text>
+                       <Text style={{fontFamily:'verdana', fontSize:8.5}}> • {projectItem.project_descriptionone}</Text>
+                       <Text style={{fontFamily:'verdana', fontSize:8.5}}> • {projectItem.project_descriptiontwo}</Text>
+
+                    </View>
                     ))}
-                </ul>
                 </li>
             ))}
             </ul>
         </section>
 
         <section>
-            <h5 className='nameTag' style={{ marginBottom: '0px' }}>PROJECT AND RESEARCH </h5>
+            <strong className='nameTag' style={{ marginBottom: '0px',color:'black' }}>CO-CURRICULAR ACTIVITIES  </strong>
             <hr className="long"  style={{  width: '100%', margin: '0 auto', border: '1px solid black', borderColor: 'black' }}/>
             <ul>
 
-            {project.map((proj, index) => (
-                <li key={index} >
-                <strong className="experience">{proj.company} - {proj.location}</strong> <strong><span className="">{proj.year}</span></strong>
-                <strong className="experience">{proj.position} </strong>
+            {curriculumData.map((curriculumItem) => (
+                <li style={{fontFamily:'verdana', fontSize:8.5}} key={curriculumItem.curriculum_id} >
+                <strong className="experience">{curriculumItem.organization_name}-{curriculumItem.	activity_name}</strong>
+                <strong><span className="">{curriculumItem.start_date}-{curriculumItem.end_date}</span></strong>
 
-                <ul>
-                    {proj.responsibilities.map((res, i) => (
-                    <li key={i}>{res}</li>
+                {curriculumData.map((curriculumItem) => (
+                    <View style={{fontFamily:'verdana', fontSize:8.5, color:'black'}} key={curriculumItem.curriculum_id}>
+                       <Text style={{fontFamily:'verdana', fontSize:8.5}}> • {curriculumItem.description}</Text>
+                       <Text style={{fontFamily:'verdana', fontSize:8.5}}> • {curriculumItem.descriptionone}</Text>
+                       <Text style={{fontFamily:'verdana', fontSize:8.5}}> • {curriculumItem.descriptiontwo}</Text>
+                    </View>
                     ))}
-                </ul>
                 </li>
             ))}
             </ul>
         </section>
 
         <section>
-            <h5 className='nameTag' style={{ marginBottom: '0px' }}>CO-CURRICULAR ACTIVITIES  </h5>
+        <strong className='nameTag' style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}}>SKILLS  </strong>
             <hr className="long"  style={{  width: '100%', margin: '0 auto', border: '1px solid black', borderColor: 'black' }}/>
+
             <ul>
+            {skillData.map((skillItem) => (
+                <View style={{fontFamily:'verdana', fontSize:8.5, color:'black'}} key={skillItem.skill_id}>
 
-            {coactivities.map((act, index) => (
-                <li key={index} >
-                <strong className="experience">{act.company} - {act.location}</strong> <strong><span className="">{act.year}</span></strong>
-                <strong className="experience">{act.position} </strong>
+                <Text style={{fontFamily:'verdana', fontSize:8.5, color:'black'}}> 
+                  {skillItem.skill_name}
+                </Text>
 
-                <ul>
-                    {act.responsibilities.map((res, i) => (
-                    <li key={i}>{res}</li>
-                    ))}
-                </ul>
-                </li>
+                </View>
             ))}
             </ul>
         </section>
 
         <section>
-        <h5 className='nameTag' style={{ marginBottom: '0px' }}>SKILLS  </h5>
+        <strong className='nameTag' style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}}>REFERENCES </strong>
             <hr className="long"  style={{  width: '100%', margin: '0 auto', border: '1px solid black', borderColor: 'black' }}/>
 
-            <ul>
-            {skills.map((skill, index) => (
-                <li key={index}>{skill}</li>
-            ))}
-            </ul>
-        </section>
-
-        <section>
-        <h5 className='nameTag' style={{ marginBottom: '0px' }}>REFERENCES </h5>
-            <hr className="long"  style={{  width: '100%', margin: '0 auto', border: '1px solid black', borderColor: 'black' }}/>
-
-            <ul>
+            <ul style={{ marginBottom: '0px', fontFamily:'verdana', fontSize:8.5, color:'black'}}>
             Available upon request 
             *STEM – Science, Technology, Engineering and Mathematics 
             </ul>
-        </section>
-
-            
+        </section> 
       </div>
+
     </div>
   );
 };
 
 export default AshesiResume;
-
-
-

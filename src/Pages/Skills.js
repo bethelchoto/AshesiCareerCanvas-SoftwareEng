@@ -50,12 +50,20 @@ const Skills=()=>{
       [name]: value,
     });
   };
+  const handleBack = (e) =>{
+    navigate("/mainskill")
+  }
 
   const handleSave = async (e) => {
     e.preventDefault();
+    if (!formData.skill_name ) {
+      alert("All fields are required");
+      return;
+    }
+
     console.log("Submitting form data:", formData);
     if (!formData.student_id) {
-      console.error("Missing student_id in formData");
+      alert("Missing student_id");
       return;
     }
 
@@ -74,11 +82,11 @@ const Skills=()=>{
       console.log("Response:", response);
 
       if (response.ok) {
-        console.log(data.message);
-        console.log("Data sent successfully", data);
+
+        alert("Skill successfully saved");
       } else {
-        console.error(data.error);
-        console.error("Error sending data. Status:", response.status);
+       
+        alert("Error Occurred");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -113,9 +121,14 @@ return (
             </div>  
 
             <div className="btn-row-education-form">
-              <button type="button" className="main-primary-btn" onClick={handleSave}>
-                save
+            <button type="button" className="main-primary-btn" onClick={handleBack}>
+                Back
               </button>
+              
+              <button type="button" className="main-primary-btn" onClick={handleSave}>
+                Save
+              </button>
+
             </div>
             
         </div>

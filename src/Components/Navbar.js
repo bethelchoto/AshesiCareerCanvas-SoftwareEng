@@ -1,7 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import '../Styles/Navbar.css';
 
 const HeaderNavbar = () => {
+  const navigate = useNavigate();
+
+  const HandleLogout = (e)=>{
+    sessionStorage.clear()
+    navigate("/login")
+  } 
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">Ashesi Career Services</a>
@@ -18,23 +25,27 @@ const HeaderNavbar = () => {
             <Link to="/About" className="nav-link">About</Link>
           </li>
           <li className="nav-item">
-            <Link to="/review" className="nav-link">Send For Review</Link>
+            <Link to="/adminpage" className="nav-link">Admin</Link>
+          </li>
+          <li className="nav-item">
+            <Link to= "/review" className="nav-link">Send For Review</Link>
           </li>
 
           <li className="nav-item">
-            <Link to="/admin" className="nav-link">Admin</Link>
-          </li>
-          
-          <li className="nav-item">
-            <Link to="/ashesiresume" className="nav-link">Ashesi Resume</Link>
+            <Link to= "/ashesiresume" className="nav-link"> View Resume</Link>
           </li>
 
         </ul>
 
         <form className="form-inline my-2 my-lg-0">
           <ul className="nav navbar-nav navbar-right">
-            <li><Link to ="/register"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
-            <li><Link to ="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+            
+            <li>
+          <Link to ="/login" onChange={HandleLogout}>
+            <span className="glyphicon glyphicon-log-in"></span> Logout
+          </Link>
+        </li>
+
           </ul>
         </form>
       </div>     

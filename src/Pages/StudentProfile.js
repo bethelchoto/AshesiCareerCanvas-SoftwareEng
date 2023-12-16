@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../Styles/App.css";
 import "../Styles/StudentProfile.css";
 
-import profile from "../Assets/profile.JPG";
+import profile from "../Assets/HomePicture.jpeg";
 import { Link, useNavigate } from "react-router-dom";
 
 const StudentProfile = () => {
@@ -57,6 +57,10 @@ const StudentProfile = () => {
     });
   };
 
+  const handleCancel = (e) =>{
+    navigate("/homestudent")
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Submitting form data:", formData);
@@ -95,41 +99,9 @@ const StudentProfile = () => {
   return (
     <div className="boarder-container">
       <div className="row-container">
-        <div className="left-side">
-          <div className="profile-picture-box">
-            <img className="profile-picture" src={profile} alt="Profile" />
-          </div>
-          <h6 className="">
-            <Link to="/">Change profile pic</Link>
-          </h6>
-        </div>
-
         <div className="right-side">
           <form onSubmit={handleSubmit}>
             <div className="form-student-row">
-              {/* <div className="form-group col-md-6">
-                <label htmlFor="firstName">First Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-              </div> */}
-
-              {/* <div className="form-group col-md-6">
-    <label htmlFor="lastName">Last Name</label>
-    <input
-      type="text"
-      className="form-control"
-      id="lastName"
-      name="lastName" 
-      value={formData.lastName}
-      onChange={handleChange}
-    />
-  </div> */}
             </div>
 
             <div className="form-student-row">
@@ -157,17 +129,16 @@ const StudentProfile = () => {
                 />
               </div>
             </div>
+
             <div className="form-student-row">
               <div className="form-group col-md-6">
-                {/* <label htmlFor="email">Email</label>
+                <label htmlFor="phoneNumber">Gender</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                /> */}
+                  id="phoneNumber"
+                  name="phoneNumber"
+                />
               </div>
 
               <div className="form-group col-md-6">
@@ -225,18 +196,23 @@ const StudentProfile = () => {
       </div>
 
       <input type="hidden" name="student_id" value={formData.student_id} />
+
       <div className="btn-row">
-        <button type="button" className="main-primary-btn">
+
+        <button type="button" className="main-primary-btn" onClick={handleCancel}>
           Cancel
         </button>
+
         <button
           type="submit"
           className="main-primary-btn"
           onClick={handleSubmit}
         >
-          save
+          Save
         </button>
+      
       </div>
+      
     </div>
   );
 };

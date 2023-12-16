@@ -17,16 +17,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
+     $student_id = intval($data->student_id);
+
     // Validate and sanitize the data (you might need to improve this based on your requirements)
     $firstName = mysqli_real_escape_string($conn, $data->first_name);
     $lastName = mysqli_real_escape_string($conn, $data->last_name);
     $email = mysqli_real_escape_string($conn, $data->email);
+    $role = mysqli_real_escape_string($conn, $data->role);
     $password = password_hash($data->password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO student (first_name, last_name, email, password_hash) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO student (first_name, last_name, email, password_hash, role,student_id) VALUES (?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $firstName, $lastName, $email, $password);
+    $stmt->bind_param("sssssi", $firstName, $lastName, $email, $password, $role, $student_id);
 
     if ($stmt->execute()) {
         // Retrieve the last inserted ID

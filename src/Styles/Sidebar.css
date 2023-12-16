@@ -1,6 +1,6 @@
 /* SideBar */
 .sidebar{
-    position: absolute;
+    position: fixed;
     background-color: #9F4848; 
     color: white;
     top: 55px;

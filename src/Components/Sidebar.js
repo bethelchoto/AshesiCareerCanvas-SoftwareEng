@@ -20,6 +20,8 @@ function Sidebar() {
       <li className='navigationBarList' onClick={()=> {navigate("/maincurriculum")}}><HistoryEduIcon/> Co-Curriculum</li>
       <li className='navigationBarList' onClick={()=> {navigate("/mainproject")}}><DeveloperBoardIcon/> Project</li>
       <li className='navigationBarList' onClick={()=> {navigate("/mainskill")}}><FluorescentIcon/> Skills</li>
+      <li className='navigationBarList' onClick={()=> {navigate("/pendingreview")}}><FluorescentIcon/> PendingReview</li>
+
     </div>
   )
 }

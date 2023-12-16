@@ -13,6 +13,9 @@ const Projects = () =>
     end_date: "",
     student_id: "",
     project_description:"",
+    project_descriptionone:"",
+    project_descriptiontwo:"",
+
   });
   
   useEffect(() => {
@@ -59,6 +62,7 @@ const Projects = () =>
     e.preventDefault();
     console.log("Submitting form data:", formData);
     if (!formData.student_id) {
+      
       console.error("Missing student_id in formData");
       return;
     }
@@ -80,10 +84,10 @@ const Projects = () =>
 
       if (response.ok) {
         console.log(data.message);
-        console.log("Data sent successfully", data);
+      alert("Data sent successfully");
       } else {
         console.error(data.error);
-        console.error("Error sending data. Status:", response.status);
+        alert("Error sending data. Status:");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -156,6 +160,30 @@ const Projects = () =>
               name="project_description"
               style={{ width: "800px", height: "100px" }}
               value={formData.project_description}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-group col-md-6">
+            <label htmlFor="project_descriptionone">Project Description Two</label>
+            <input
+              type="text"
+              className="form-control"
+              id="project_descriptionone"
+              name="project_descriptionone"
+              value={formData.project_descriptionone}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-group col-md-6">
+            <label htmlFor="project_descriptiontwo">Project Description Three</label>
+            <input
+              type="text"
+              className="form-control"
+              id="project_descriptiontwo"
+              name="project_descriptiontwo"
+              value={formData.project_descriptiontwo}
               onChange={handleChange}
             />
           </div>

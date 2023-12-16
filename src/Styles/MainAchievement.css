@@ -5,5 +5,5 @@
 .btn-row-achievement{
     display: flex;
     justify-content: space-between;
-    margin-top: 360px;
+    /* margin-top: 360px; */
 }

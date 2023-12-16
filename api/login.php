@@ -15,6 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validate and sanitize the data (you might need to improve this based on your requirements)
     $email = mysqli_real_escape_string($conn, $data->email);
     $password = mysqli_real_escape_string($conn, $data->password);
+    $role = mysqli_real_escape_string($conn, $data->role);
+
 
     // Query to check if the user exists with the provided email and password
     $sql = "SELECT * FROM student WHERE email = '$email'";
@@ -28,8 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (password_verify($password, $hashedPassword)) {
             // Passwords match, login successful
             $student_id = $row['student_id'];
+            $email = $row['email'];
+            $role = $row['role'];
+
             $profile_url = "http://localhost/api/student.php?student_id=$student_id";
-            echo json_encode(array("message" => "Logged in", "student_id" => $student_id));
+            echo json_encode(array("message" => "Logged in", "student_id" => $student_id, "email" => $email, "role" => $role));
+            // , "role" => $role 
         } else {
             // Passwords do not match, login failed
             echo json_encode(array("error" => "Invalid password"));

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
@@ -21,7 +22,7 @@ const MainEducation = () =>
         const studentId = sessionStorage.getItem("studentId");
 
         const response = await fetch(
-          `http://localhost/careercanvas/getEducationData.php?student_id=${studentId}`
+          `http://localhost/api/getEducationData.php?student_id=${studentId}`
         );
         const data = await response.json();
         console.log("API Response:", data);
@@ -68,7 +69,7 @@ const MainEducation = () =>
     // Save the edited data to the backend
     try {
       const response = await fetch(
-        "http://localhost/careercanvas/editEducationData.php",
+        "http://localhost/api/editEducationData.php",
         {
           method: "POST",
           headers: {
@@ -91,6 +92,43 @@ const MainEducation = () =>
       console.error("Error:", error);
     }
   };
+
+  if (
+    !Array.isArray(educationData) ||
+    educationData.length === 0 ||
+    educationData.message
+  ) {
+    return (
+      <div className="boarder-container">
+        <div className="form-student-row">
+          <div className="form-group col-md-6">
+            <label htmlFor="inputEmail4">EDUCATION</label>
+            <hr
+              className="long-line"
+              style={{ width: "100%", border: "1px solid black" }}
+            />
+          </div>
+        </div>
+        <div className="right-side">
+          <div className="labels-container">
+            <label htmlFor="label1">
+              {educationData.message || "No education data found"}
+            </label>
+          </div>
+        </div>
+
+        <div className="btn-row-education">
+          <button
+            type="submit"
+            className="main-primary-btn"
+            onClick={() => navigate("/education")}
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="boarder-container">
@@ -173,44 +211,38 @@ const MainEducation = () =>
               </span>
             </div>
 
-            <div className="approval-status">
-              {/* Render the "Approved" button only if not in edit mode */}
-              {!editingIndex && (
-                <button type="submit" className="main-primary-btn">
-                  Approved
-                </button>
-              )}
-            </div>
+
+
           </div>
-        </div>
-      ))}
-      <div className="btn-row-education">
-        <button type="submit" className="main-primary-btn">
-          cancel
-        </button>
-        {educationData.map((educationItem, index) => (
-          <div key={educationItem.education_id}>
-            {editingIndex === index ? (
-              // If in edit mode, show "Save" button
+          <div className="approval-status">
+
+          {editingIndex === index ? (
               <button
-                type="submit"
+                type="button"
                 className="main-primary-btn"
                 onClick={() => handleSave(educationItem)}
               >
                 Save
               </button>
             ) : (
-              // If not in edit mode, show "Edit" button
               <button
-                type="submit"
+                type="button"
                 className="main-primary-btn"
                 onClick={() => handleEdit(index)}
               >
                 Edit
               </button>
             )}
+
           </div>
-        ))}
+
+        </div>
+      ))}
+      <div className="btn-row-education">
+        <button type="submit" className="main-primary-btn" onClick={() => navigate("/homestudent")}>
+          Back
+        </button>
+        
         <button
           type="submit"
           className="main-primary-btn"
